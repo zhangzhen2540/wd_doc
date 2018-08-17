@@ -1,10 +1,6 @@
 {
-  "name": "User API Document",
-  "version": "0.1.0",
-  "description": "A sample of User API document generated from apiDoc",
-  "title": "User API",
-  "url" : "http://localhost:5000",
-  "sampleUrl": "http://localhost:5000",
+  "name": "WD cloud API Document",
+  "title": "WD cloud API",
   "header": {
     "title": "Overview",
     "filename": "header.md"

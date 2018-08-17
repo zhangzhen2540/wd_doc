@@ -1,2 +1,2 @@
 ## Overview
-Below is the API doc of User APIs.
+Below is the API doc of WD cloud APIs.
