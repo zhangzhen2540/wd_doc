@@ -1616,6 +1616,75 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/teacher/import/edit",
+    "title": "TeacherDataImport",
+    "description": "<p>教师数据导入</p>",
+    "name": "TeacherDataImport",
+    "group": "Teacher",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "fileName",
+            "description": "<p>上传文件名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "override",
+            "description": "<p>如果导入数据教师编号重复，如何处理(override不传：返回错误，true: 覆盖， false: 丢弃)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>文件保存名</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\"code\": 200, \"entity\": \"F3323300.doc\", \"message\": \"success\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/DataImport.java",
+    "groupTitle": "Teacher"
+  },
+  {
+    "type": "post",
     "url": "/login",
     "title": "Login",
     "name": "userLogin",
