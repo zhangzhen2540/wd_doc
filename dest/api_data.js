@@ -1,5 +1,151 @@
 define({ "api": [
   {
+    "type": "get",
+    "url": "/course/teachRecord/query",
+    "title": "CourseTeachRecordQuery",
+    "description": "<p>课程上课记录查询</p>",
+    "name": "CourseTeachRecordQuery",
+    "group": "Course",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "courseId",
+            "description": "<p>课程ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "teachTeacherId",
+            "description": "<p>授课教师ID(管理员查看特定教师授课记录时才需要传值)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>授课记录</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.courseId",
+            "description": "<p>课程ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.courseName",
+            "description": "<p>课程名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.courseTeacherGroupId",
+            "description": "<p>课程教师组ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos",
+            "description": "<p>课时授课记录</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.lessonName",
+            "description": "<p>课时名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos",
+            "description": "<p>教师授课记录</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos.lessonCode",
+            "description": "<p>授课Code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos.teacherId",
+            "description": "<p>教师ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos.teacherName",
+            "description": "<p>教师名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos.startTime",
+            "description": "<p>授课开始时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonTeachRecordVos.teacherLessonVos.endTime",
+            "description": "<p>授课结束时间</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/CourseTeachRecordQuery.java",
+    "groupTitle": "Course"
+  },
+  {
     "type": "post",
     "url": "/course/deletes",
     "title": "CurseDelete",
@@ -301,6 +447,711 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/classDiscuss/add",
+    "title": "ClassDiscussAdd",
+    "description": "<p>课时讨论添加</p>",
+    "name": "ClassDiscussAdd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "discussContent",
+            "description": "<p>讨论内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "attachmentPath",
+            "description": "<p>资料路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "answer",
+            "description": "<p>答案</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "analysis",
+            "description": "<p>解析</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时讨论ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/classDiscuss/deletes",
+    "title": "ClassDiscussDelete",
+    "description": "<p>课时讨论删除</p>",
+    "name": "ClassDiscussDelete",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "classDiscussId",
+            "description": "<p>课堂讨论ID，删除的讨论必须是属于同一课时的</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>删除课堂讨论ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/classDiscuss/get",
+    "title": "ClassDiscussGet",
+    "description": "<p>课堂讨论获取</p>",
+    "name": "ClassDiscussGet",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>课堂讨论ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课堂讨论</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>讨论ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>所属课时</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.discussContent",
+            "description": "<p>讨论内容</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.answer",
+            "description": "<p>参考答案</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.analysis",
+            "description": "<p>参考解析</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.status",
+            "description": "<p>状态，1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.sort",
+            "description": "<p>排序编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.discussUrl",
+            "description": "<p>附件文件路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.fileType",
+            "description": "<p>附件文件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.fileSize",
+            "description": "<p>附件文件大小，单位byte</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/classDiscuss/list",
+    "title": "ClassDiscussList",
+    "description": "<p>课堂讨论列表</p>",
+    "name": "ClassDiscussList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课堂讨论列表，按sort排序（具体字段参考ClassDiscussGet API）</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/classDiscuss/modify",
+    "title": "ClassDiscussModify",
+    "description": "<p>课时讨论修改</p>",
+    "name": "ClassDiscussModify",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>课堂讨论ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "discussContent",
+            "description": "<p>讨论内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "attachmentPath",
+            "description": "<p>资料路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "answer",
+            "description": "<p>答案</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "analysis",
+            "description": "<p>解析</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时讨论ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lessonAssignment/add",
+    "title": "LessonAssignmentAdd",
+    "description": "<p>课堂作业添加</p>",
+    "name": "LessonAssignmentAdd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assignmentsName",
+            "description": "<p>题目</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "attachmentPath",
+            "description": "<p>资料路径</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课堂作业ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lessonAssignment/update",
+    "title": "LessonAssignmentEdit",
+    "description": "<p>课堂作业修改</p>",
+    "name": "LessonAssignmentEdit",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>作业ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assignmentsName",
+            "description": "<p>题目</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "attachmentPath",
+            "description": "<p>资料路径</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课堂作业ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lessonMaterial/copy/edit",
+    "title": "LessonMaterialCopy",
+    "description": "<p>复制课件资料到指定课时下</p>",
+    "name": "LessonMaterialCopy",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "targetLessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonMaterialId",
+            "description": "<p>拷贝课件资料ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>新建课时资料ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/questionAnswer/submit/edit",
+    "title": "QuestionAnswerSubmit",
+    "description": "<p>提交问题答案</p>",
+    "name": "QuestionAnswerSubmit",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "questionId",
+            "description": "<p>问题ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "optional": false,
+            "field": "questionType",
+            "description": "<p>问题类型,1: 选择题, 2: 判断题, 3: 填空题, 4: 简答题</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "answerContent",
+            "description": "<p>答案</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "isSubmit",
+            "description": "<p>是否提交</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>答题记录ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/QuestionAnswerSubmit.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/lesson/deletes",
     "title": "LessonDelete",
     "description": "<p>课时删除</p>",
@@ -537,7 +1388,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Number[]",
+            "type": "Number",
             "optional": true,
             "field": "entity",
             "description": "<p>课时资料ID</p>"
