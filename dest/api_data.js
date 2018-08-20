@@ -129,14 +129,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "entity.lessonTeachRecordVos.teacherLessonVos.startTime",
-            "description": "<p>授课开始时间</p>"
+            "description": "<p>授课开始时间（UTC时间）</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
             "field": "entity.lessonTeachRecordVos.teacherLessonVos.endTime",
-            "description": "<p>授课结束时间</p>"
+            "description": "<p>授课结束时间（UTC时间）</p>"
           }
         ]
       }
