@@ -1,5 +1,67 @@
 define({ "api": [
   {
+    "type": "post",
+    "url": "/file/upload",
+    "title": "FileUpload",
+    "description": "<p>文件上传（提供文件上传到临时路径中，共后续操作使用）</p>",
+    "name": "FileUpload",
+    "group": "Common",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "file",
+            "description": "<p>上传文件</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>文件保存名</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\"code\": 200, \"entity\": \"F3323300.doc\", \"message\": \"success\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/FileUpload.java",
+    "groupTitle": "Common"
+  },
+  {
     "type": "get",
     "url": "/course/teachRecord/query",
     "title": "CourseTeachRecordQuery",
