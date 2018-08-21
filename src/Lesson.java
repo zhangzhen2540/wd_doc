@@ -241,3 +241,26 @@
 *
 */
 
+
+
+/**
+* @api {get} /lesson/teachingRecord LessonTeachingRecord
+* @apiDescription 查询课时正在上课的记录
+* @apiName LessonTeachingRecord
+* @apiGroup Lesson
+*
+* @apiParam {Number} lessonId 课时ID
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Number} [entity] 上课记录
+* @apiSuccess {Number} entity.lessonId 课时ID 
+* @apiSuccess {String} entity.lessonName 课时名称 
+* @apiSuccess {Boolean} entity.isTeaching 是否上课中 
+* @apiSuccess {Number} entity.teachTeacherId 上课教师ID 
+* @apiSuccess {String} entity.teachTeacherName 上课教师姓名 
+* @apiSuccess {String} entity.startTime 上课开始时间 
+* @apiSuccess {String} [entity.endTime] 上课结束时间 
+*
+*/
+

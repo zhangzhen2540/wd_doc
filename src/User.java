@@ -18,7 +18,7 @@
 * @apiSuccess {Number=1,2,3} entity.sex 性别，1:男，2：女，3：未知
 * @apiSuccess {String} [entity.cellPhoneNo] 电话
 * @apiSuccess {String} [entity.email] 邮箱
-* @apiSuccess {Number=1,2} [entity.identity] 用户身份，1：教师，2：学生
+* @apiSuccess {Number=1,2,3} [entity.identity] 用户身份，1: 管理员，2：教师，3：学生
 * @apiSuccess {String} [entity.socialContantNo] 社交账号
 *
 * @apiErrorExample {json} Error-Example:
@@ -39,4 +39,25 @@
 *
 * @apiErrorExample {json} Error-Example:
 * {"code": 500, "message": "用户名或密码错误"}
+*/
+
+
+
+/**
+* @api {post} /user/updatePassword UserUpdatePassword
+* @apiName UserUpdatePassword
+* @apiGroup User
+*
+* @apiParam {String} oldPassword 旧密码
+* @apiParam {String} newPassword 新密码
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [entity] 用户ID
+* @apiSuccess {String} [message] 响应描述
+* 
+* @apiSuccessExample {json} Success-Example:
+* {"code": 200, "message": "success"}
+*
+* @apiErrorExample {json} Error-Example:
+* {"code": 500, "message": "旧密码错误"}
 */

@@ -1127,6 +1127,110 @@
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/lesson/teachingRecord",
+    "title": "LessonTeachingRecord",
+    "description": "<p>查询课时正在上课的记录</p>",
+    "name": "LessonTeachingRecord",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>上课记录</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonName",
+            "description": "<p>课时名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "entity.isTeaching",
+            "description": "<p>是否上课中</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.teachTeacherId",
+            "description": "<p>上课教师ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.teachTeacherName",
+            "description": "<p>上课教师姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.startTime",
+            "description": "<p>上课开始时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.endTime",
+            "description": "<p>上课结束时间</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "post",
     "url": "/questionAnswer/submit/edit",
     "title": "QuestionAnswerSubmit",
@@ -1685,6 +1789,83 @@
   },
   {
     "type": "post",
+    "url": "/user/updatePassword",
+    "title": "UserUpdatePassword",
+    "name": "UserUpdatePassword",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "oldPassword",
+            "description": "<p>旧密码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "newPassword",
+            "description": "<p>新密码</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\"code\": 200, \"message\": \"success\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Example:",
+          "content": "{\"code\": 500, \"message\": \"旧密码错误\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/User.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/login",
     "title": "Login",
     "name": "userLogin",
@@ -1796,11 +1977,12 @@
             "type": "Number",
             "allowedValues": [
               "1",
-              "2"
+              "2",
+              "3"
             ],
             "optional": true,
             "field": "entity.identity",
-            "description": "<p>用户身份，1：教师，2：学生</p>"
+            "description": "<p>用户身份，1: 管理员，2：教师，3：学生</p>"
           },
           {
             "group": "Success 200",
@@ -1822,7 +2004,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "src/Login.java",
+    "filename": "src/User.java",
     "groupTitle": "User"
   },
   {
@@ -1872,7 +2054,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "src/Login.java",
+    "filename": "src/User.java",
     "groupTitle": "User"
   }
 ]
