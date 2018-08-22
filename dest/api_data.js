@@ -1065,6 +1065,182 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/lesson/detail/query",
+    "title": "课时详情查询",
+    "name": "LessonDetailQuery",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: ",
+          "content": "lessonId=1",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时详情</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "entity.lesson",
+            "description": "<p>课时信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lesson.id",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lesson.lessonName",
+            "description": "<p>课时名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.lesson.lessonDesc",
+            "description": "<p>课时描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lesson.courseId",
+            "description": "<p>所属课程ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lesson.teacherGroupId",
+            "description": "<p>所属教师组ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.lesson.status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "entity.course",
+            "description": "<p>课程信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.course.id",
+            "description": "<p>课程ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.course.courseName",
+            "description": "<p>课程名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.course.courseTitle",
+            "description": "<p>课程标题</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.course.courseDesc",
+            "description": "<p>课程介绍</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.course.teacherGroupId",
+            "description": "<p>所属教师组ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.course.status",
+            "description": "<p>课程状态</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Example:",
+          "content": "{\"code\": 500, \"message\": \"param error\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonDetail.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "post",
     "url": "/lessonMaterial/copy/edit",
     "title": "LessonMaterialCopy",
@@ -1314,227 +1490,6 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/QuestionAnswerSubmit.java",
-    "groupTitle": "Lesson"
-  },
-  {
-    "type": "get",
-    "url": "/lesson/detail/query",
-    "title": "LessonDetailQuery",
-    "name": "______",
-    "group": "Lesson",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "lessonId",
-            "description": "<p>课时ID</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example: ",
-          "content": "lessonId=1",
-          "type": "String"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "200",
-              "500"
-            ],
-            "optional": false,
-            "field": "code",
-            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "message",
-            "description": "<p>响应描述</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": true,
-            "field": "entity",
-            "description": "<p>课时详情</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "entity.lesson",
-            "description": "<p>课时信息</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.lesson.id",
-            "description": "<p>课时ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.lesson.lessonName",
-            "description": "<p>课时名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.lesson.lessonDesc",
-            "description": "<p>课时描述</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.lesson.courseId",
-            "description": "<p>所属课程ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.lesson.teacherGroupId",
-            "description": "<p>所属教师组ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "0",
-              "1"
-            ],
-            "optional": false,
-            "field": "entity.lesson.status",
-            "description": "<p>状态</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "entity.course",
-            "description": "<p>课程信息</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.course.id",
-            "description": "<p>课程ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.course.courseName",
-            "description": "<p>课程名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.course.courseTitle",
-            "description": "<p>课程标题</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.course.courseDesc",
-            "description": "<p>课程介绍</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.course.teacherGroupId",
-            "description": "<p>所属教师组ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "0",
-              "1"
-            ],
-            "optional": false,
-            "field": "entity.course.status",
-            "description": "<p>课程状态</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "1",
-              "2",
-              "3"
-            ],
-            "optional": false,
-            "field": "entity.sex",
-            "description": "<p>性别，1:男，2：女，3：未知</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.cellPhoneNo",
-            "description": "<p>电话</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.email",
-            "description": "<p>邮箱</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "1",
-              "2",
-              "3"
-            ],
-            "optional": true,
-            "field": "entity.identity",
-            "description": "<p>用户身份，1: 管理员，2：教师，3：学生</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.socialContantNo",
-            "description": "<p>社交账号</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Example:",
-          "content": "{\"code\": 500, \"message\": \"param error\"}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/LessonDetail.java",
     "groupTitle": "Lesson"
   },
   {

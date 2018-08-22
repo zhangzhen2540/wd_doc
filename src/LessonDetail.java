@@ -1,6 +1,6 @@
 /**
-* @api {get} /lesson/detail/query LessonDetailQuery
-* @apiName 课时详情查询
+* @api {get} /lesson/detail/query 课时详情查询
+* @apiName LessonDetailQuery
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID
@@ -26,12 +26,6 @@
 * @apiSuccess {Number} entity.course.teacherGroupId 所属教师组ID
 * @apiSuccess {Number=0,1} entity.course.status 课程状态
 * 
-* @apiSuccess {Number=1,2,3} entity.sex 性别，1:男，2：女，3：未知
-* @apiSuccess {String} [entity.cellPhoneNo] 电话
-* @apiSuccess {String} [entity.email] 邮箱
-* @apiSuccess {Number=1,2,3} [entity.identity] 用户身份，1: 管理员，2：教师，3：学生
-* @apiSuccess {String} [entity.socialContantNo] 社交账号
-*
 * @apiErrorExample {json} Error-Example:
 * {"code": 500, "message": "param error"}
 */
