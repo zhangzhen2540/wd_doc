@@ -1017,7 +1017,7 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "assignmentsName",
+            "field": "assignmentName",
             "description": "<p>题目</p>"
           },
           {
@@ -1107,7 +1107,7 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "assignmentsName",
+            "field": "assignmentName",
             "description": "<p>题目</p>"
           },
           {
@@ -1228,7 +1228,7 @@
             "group": "Success 200",
             "type": "String",
             "optional": true,
-            "field": "entity.assignmentsName",
+            "field": "entity.assignmentName",
             "description": "<p>作业标题</p>"
           },
           {

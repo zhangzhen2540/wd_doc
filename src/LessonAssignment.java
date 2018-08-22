@@ -7,7 +7,7 @@
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID
-* @apiParam {String} assignmentsName 题目
+* @apiParam {String} assignmentName 题目
 * @apiParam {Object} [attachments] 附件
 * @apiParam {String} attachments.fileLocalPath 附件路径
 * @apiParam {String} attachments.fileName 附件名
@@ -26,7 +26,7 @@
 *
 * @apiParam {Number} id 作业ID
 * @apiParam {Number} lessonId 课时ID
-* @apiParam {String} assignmentsName 题目
+* @apiParam {String} assignmentName 题目
 * @apiParam {Object} [attachments] 附件
 * @apiParam {String} attachments.fileLocalPath 附件路径
 * @apiParam {String} attachments.fileName 附件名
@@ -51,7 +51,7 @@
 * @apiSuccess {String} [message] 响应描述
 * @apiSuccess {Number} [entity] 课堂作业ID
 * @apiSuccess {Number} [entity.lessonId] 课时ID
-* @apiSuccess {String} [entity.assignmentsName] 作业标题
+* @apiSuccess {String} [entity.assignmentName] 作业标题
 * @apiSuccess {Object[]} [entity.attachments] 附件列表
 * @apiSuccess {Number} entity.attachments.id 附件ID
 * @apiSuccess {String} entity.attachments.fileName 附件名称
