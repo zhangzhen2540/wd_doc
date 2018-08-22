@@ -1,5 +1,5 @@
 /**
-* @api {post} /file/upload FileUpload
+* @api {post} /file/upload 文件上传
 * @apiDescription 文件上传（提供文件上传到临时路径中，共后续操作使用）
 * @apiName FileUpload
 * @apiGroup Common

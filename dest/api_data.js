@@ -2,7 +2,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/file/upload",
-    "title": "FileUpload",
+    "title": "文件上传",
     "description": "<p>文件上传（提供文件上传到临时路径中，共后续操作使用）</p>",
     "name": "FileUpload",
     "group": "Common",
@@ -1324,6 +1324,212 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
+    "type": "post",
+    "url": "/lessonMaterial/copy/edit",
+    "title": "LessonMaterialCopy",
+    "description": "<p>复制课件资料到指定课时下</p>",
+    "name": "LessonMaterialCopy",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "targetLessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonMaterialId",
+            "description": "<p>拷贝课件资料ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>新建课时资料ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonMaterial.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/lessonMaterial/list",
+    "title": "课时资料列表查询",
+    "description": "<p>课时资料列表查询</p>",
+    "name": "LessonMaterialList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "status",
+            "description": "<p>资料状态</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时资料列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>课时资料ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.materialName",
+            "description": "<p>课时资料名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.materialDesc",
+            "description": "<p>课时资料描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.materialUrl",
+            "description": "<p>资料访问地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.status",
+            "description": "<p>资料状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.fileType",
+            "description": "<p>资料文件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.fileSize",
+            "description": "<p>资料文件大小，单位byte</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.isShare",
+            "description": "<p>是否共享资料</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"createTime\": 1534949063000,\n            \"createUserId\": 1,\n            \"fileSize\": 19456,\n            \"fileType\": \"excel\",\n            \"fromWhere\": 1,\n            \"id\": 1,\n            \"isShare\": 0,\n            \"lessonId\": 2,\n            \"localPath\": \"D:\\\\workspace\\\\wd\\\\wd_global\\\\null\\\\excel\\\\db73cc16-652e-46fb-a5da-2f5e0750fae3.xls\",\n            \"materialDesc\": \"test excel\",\n            \"materialName\": \"teacherData.xls\",\n            \"materialUrl\": \"/excel/db73cc16-652e-46fb-a5da-2f5e0750fae3.xls\",\n            \"sort\": 1,\n            \"status\": 1,\n            \"updateTime\": 1534949063000,\n            \"updateUserId\": 1\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonMaterial.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "get",
     "url": "/lesson/teachingRecord",
     "title": "LessonTeachingRecord",
@@ -1765,6 +1971,111 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/lessonMaterial/add",
+    "title": "课时资料添加",
+    "description": "<p>课时资料添加</p>",
+    "name": "lessonMaterialAdd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "materialName",
+            "description": "<p>资料名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "fromWhere",
+            "description": "<p>资料来源，1：上传，2：资料库</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "materialBankId",
+            "description": "<p>资料库资料ID(资料来源自资料库时必填)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "localPath",
+            "description": "<p>资料路径（上传资料时必填）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "isShare",
+            "description": "<p>是否共享，1：共享，0：不共享</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "materialDesc",
+            "description": "<p>资料描述</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时资料ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonMaterial.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/lessonMaterial/deletes",
     "title": "LessonMaterialDelete",
     "description": "<p>课时资料删除</p>",
@@ -1816,6 +2127,61 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lessonMaterial/deletes",
+    "title": "LessonMaterialDelete",
+    "description": "<p>课时资料删除</p>",
+    "name": "lessonMaterialDelete",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "lessonMaterialId",
+            "description": "<p>删除课时资料ID列表</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>删除课时资料ID列表</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonMaterial.java",
     "groupTitle": "Lesson"
   },
   {
