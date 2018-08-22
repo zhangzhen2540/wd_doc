@@ -58,46 +58,6 @@
 */
 
 
-
-
-
-
-
-/**
-* @api {post} /lessonAssignment/add LessonAssignmentAdd
-* @apiDescription 课堂作业添加
-* @apiName LessonAssignmentAdd
-* @apiGroup Lesson
-*
-* @apiParam {Number} lessonId 课时ID
-* @apiParam {String} assignmentsName 题目
-* @apiParam {String[]} [attachmentPath] 资料路径
-*
-* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
-* @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 课堂作业ID
-*
-*/
-
-/**
-* @api {post} /lessonAssignment/update LessonAssignmentEdit
-* @apiDescription 课堂作业修改
-* @apiName LessonAssignmentEdit
-* @apiGroup Lesson
-*
-* @apiParam {Number} id 作业ID
-* @apiParam {Number} lessonId 课时ID
-* @apiParam {String} assignmentsName 题目
-* @apiParam {String[]} [attachmentPath] 资料路径
-*
-* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
-* @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 课堂作业ID
-*
-*/
-
-
-
 /**
 * @api {get} /lesson/teachingRecord LessonTeachingRecord
 * @apiDescription 查询课时正在上课的记录

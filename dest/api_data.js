@@ -554,13 +554,6 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String[]",
-            "optional": true,
-            "field": "attachmentPath",
-            "description": "<p>资料路径</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "String",
             "optional": true,
             "field": "answer",
@@ -572,6 +565,27 @@ define({ "api": [
             "optional": true,
             "field": "analysis",
             "description": "<p>解析</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
           }
         ]
       }
@@ -602,7 +616,7 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>课时讨论ID</p>"
+            "description": "<p>课堂讨论ID</p>"
           }
         ]
       }
@@ -762,31 +776,59 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity.attachments",
+            "description": "<p>附件列表</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.sort",
+            "field": "entity.attachments.id",
+            "description": "<p>附件ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileName",
+            "description": "<p>附件名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileUrl",
+            "description": "<p>附件访问路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileLocalPath",
+            "description": "<p>附件存储路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileSize",
+            "description": "<p>附件大小，单位byte</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileType",
+            "description": "<p>附件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.attachments.sort",
             "description": "<p>排序编号</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.discussUrl",
-            "description": "<p>附件文件路径</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.fileType",
-            "description": "<p>附件文件类型</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.fileSize",
-            "description": "<p>附件文件大小，单位byte</p>"
           }
         ]
       }
@@ -883,13 +925,6 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String[]",
-            "optional": true,
-            "field": "attachmentPath",
-            "description": "<p>资料路径</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "String",
             "optional": true,
             "field": "answer",
@@ -901,6 +936,27 @@ define({ "api": [
             "optional": true,
             "field": "analysis",
             "description": "<p>解析</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": true,
+            "field": "attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
           }
         ]
       }
@@ -931,7 +987,7 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>课时讨论ID</p>"
+            "description": "<p>课堂讨论ID</p>"
           }
         ]
       }
@@ -943,7 +999,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lessonAssignment/add",
-    "title": "LessonAssignmentAdd",
+    "title": "课堂作业添加",
     "description": "<p>课堂作业添加</p>",
     "name": "LessonAssignmentAdd",
     "group": "Lesson",
@@ -966,10 +1022,24 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String[]",
+            "type": "Object",
             "optional": true,
-            "field": "attachmentPath",
-            "description": "<p>资料路径</p>"
+            "field": "attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
           }
         ]
       }
@@ -1006,7 +1076,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "src/Lesson.java",
+    "filename": "src/LessonAssignment.java",
     "groupTitle": "Lesson"
   },
   {
@@ -1042,10 +1112,24 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String[]",
+            "type": "Object",
             "optional": true,
-            "field": "attachmentPath",
-            "description": "<p>资料路径</p>"
+            "field": "attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
           }
         ]
       }
@@ -1082,7 +1166,132 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "src/Lesson.java",
+    "filename": "src/LessonAssignment.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/lessonAssignment/get",
+    "title": "课堂作业获取",
+    "description": "<p>课堂作业获取</p>",
+    "name": "LessonAssignmentGet",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "data",
+            "description": "<p>课堂作业ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课堂作业ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.assignmentsName",
+            "description": "<p>作业标题</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity.attachments",
+            "description": "<p>附件列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.attachments.id",
+            "description": "<p>附件ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileName",
+            "description": "<p>附件名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileUrl",
+            "description": "<p>附件访问路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileLocalPath",
+            "description": "<p>附件存储路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileSize",
+            "description": "<p>附件大小，单位byte</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileType",
+            "description": "<p>附件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.attachments.sort",
+            "description": "<p>排序编号</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonAssignment.java",
     "groupTitle": "Lesson"
   },
   {

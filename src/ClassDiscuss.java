@@ -16,10 +16,14 @@
 * @apiSuccess {String} [entity.answer] 参考答案
 * @apiSuccess {String} [entity.analysis] 参考解析
 * @apiSuccess {Number=0,1} entity.status 状态，1：启用，0：禁用
-* @apiSuccess {Number} entity.sort 排序编号
-* @apiSuccess {String} entity.discussUrl 附件文件路径
-* @apiSuccess {String} entity.fileType 附件文件类型
-* @apiSuccess {Number} entity.fileSize 附件文件大小，单位byte
+* @apiSuccess {Object[]} [entity.attachments] 附件列表
+* @apiSuccess {Number} entity.attachments.id 附件ID
+* @apiSuccess {String} entity.attachments.fileName 附件名称
+* @apiSuccess {String} entity.attachments.fileUrl 附件访问路径
+* @apiSuccess {String} entity.attachments.fileLocalPath 附件存储路径
+* @apiSuccess {String} entity.attachments.fileSize 附件大小，单位byte
+* @apiSuccess {String} entity.attachments.fileType 附件类型
+* @apiSuccess {Number} entity.attachments.sort 排序编号
 *
 */
 
@@ -64,13 +68,15 @@
 * @apiParam {Number} id 课堂讨论ID
 * @apiParam {Number} lessonId 课时ID
 * @apiParam {String} discussContent 讨论内容
-* @apiParam {String[]} [attachmentPath] 资料路径
 * @apiParam {String} [answer] 答案
 * @apiParam {String} [analysis] 解析
+* @apiParam {Object} [attachments] 附件
+* @apiParam {String} attachments.fileLocalPath 附件路径
+* @apiParam {String} attachments.fileName 附件名
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 课时讨论ID
+* @apiSuccess {Number} [entity] 课堂讨论ID
 *
 */
 
@@ -82,13 +88,15 @@
 *
 * @apiParam {Number} lessonId 课时ID
 * @apiParam {String} discussContent 讨论内容
-* @apiParam {String[]} [attachmentPath] 资料路径
 * @apiParam {String} [answer] 答案
 * @apiParam {String} [analysis] 解析
+* @apiParam {Object} [attachments] 附件
+* @apiParam {String} attachments.fileLocalPath 附件路径
+* @apiParam {String} attachments.fileName 附件名
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 课时讨论ID
+* @apiSuccess {Number} [entity] 课堂讨论ID
 *
 */
 
