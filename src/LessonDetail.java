@@ -1,6 +1,6 @@
 /**
 * @api {get} /lesson/detail/query 课时详情查询
-* @apiName LessonDetailQuery
+* @apiName 课时详情查询
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID

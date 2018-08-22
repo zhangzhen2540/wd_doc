@@ -37,8 +37,8 @@
 
 
 /**
-* @api {get} /course/list CurseList
-* @apiDescription 课程列表查询
+* @api {get} /course/list 课程列表
+* @apiDescription 课程列表
 * @apiName courseList
 * @apiGroup Course
 *
@@ -62,4 +62,66 @@
 * @apiSuccess {Number=0,1} [entity.status] 课程状态，1：启用，0：禁用
 * @apiSuccess {Number=0,1} [entity.deleteStatus] 课程删除状态，1：未删除，0：删除
 * @apiSuccess {Number} [entity.sort] 课程排序
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": [
+        {
+            "courseName": "ceshi1",
+            "createTime": 1534936246000,
+            "createUserId": 2,
+            "deleteStatus": 1,
+            "id": 6,
+            "status": 1,
+            "teacherGroupId": 1,
+            "updateTime": 1534936246000,
+            "updateUserId": 2
+        }
+    ],
+    "message": "\"SUCCESS\""
+}
+*/
+
+
+
+/**
+* @api {get} /course/get 课程详情
+* @apiDescription 课程详情
+* @apiName CourseGet
+* @apiGroup Course
+*
+* @apiParam {String} [data] 课程ID
+*
+* @apiParamExample {String} Request-Example: 
+*  data=1
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object} [entity] 课程信息
+* @apiSuccess {Number} entity.id 课程ID
+* @apiSuccess {String} entity.courseName 课程名称
+* @apiSuccess {String} [entity.courseTitle] 课程标题
+* @apiSuccess {String} [entity.courseDesc] 课程描述
+* @apiSuccess {Number} [entity.teacherGroupId] 课程所属教师组ID
+* @apiSuccess {Number=0,1} [entity.status] 课程状态，1：启用，0：禁用
+* @apiSuccess {Number=0,1} [entity.deleteStatus] 课程删除状态，1：未删除，0：删除
+* @apiSuccess {Number} [entity.sort] 课程排序
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": {
+        "courseName": "AWERQE",
+        "createTime": 1534871890000,
+        "createUserId": 2,
+        "deleteStatus": 1,
+        "id": 1,
+        "status": 1,
+        "teacherGroupId": 1,
+        "updateTime": 1534871890000,
+        "updateUserId": 2
+    },
+    "message": "\"SUCCESS\""
+}
 */
