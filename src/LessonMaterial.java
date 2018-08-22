@@ -92,7 +92,7 @@
             "id": 1,
             "isShare": 0,
             "lessonId": 2,
-            "localPath": "D:\\workspace\\wd\\wd_global\\null\\excel\\db73cc16-652e-46fb-a5da-2f5e0750fae3.xls",
+            "localPath": "\\excel\\db73cc16-652e-46fb-a5da-2f5e0750fae3.xls",
             "materialDesc": "test excel",
             "materialName": "teacherData.xls",
             "materialUrl": "/excel/db73cc16-652e-46fb-a5da-2f5e0750fae3.xls",

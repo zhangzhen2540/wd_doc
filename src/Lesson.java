@@ -61,63 +61,6 @@
 
 
 
-/**
-* @api {post} /lessonMaterial/add LessonMaterialAdd
-* @apiDescription 课时资料添加
-* @apiName lessonMaterialAdd
-* @apiGroup Lesson
-*
-* @apiParam {Number} lessonId 课时ID
-* @apiParam {String} materialName 资料名
-* @apiParam {Number=1,2} fromWhere 资料来源，1：上传，2：资料库
-* @apiParam {Number} [materialBankId] 资料库资料ID(资料来源自资料库时必填)
-* @apiParam {String} localPath 资料路径（上传资料时必填）
-* @apiParam {Number=0, 1}  [isShare] 是否共享，1：共享，0：不共享
-* @apiParam {String} [materialDesc] 资料描述
-*
-*
-* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
-* @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 课时资料ID
-*
-*/
-
-
-/**
-* @api {post} /lessonMaterial/copy/edit LessonMaterialCopy
-* @apiDescription 复制课件资料到指定课时下
-* @apiName LessonMaterialCopy
-* @apiGroup Lesson
-*
-* @apiParam {Number} targetLessonId 课时ID
-* @apiParam {Number} lessonMaterialId 拷贝课件资料ID
-*
-* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
-* @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 新建课时资料ID
-*
-*/
-
-
-
-
-/**
-* @api {post} /lessonMaterial/deletes LessonMaterialDelete
-* @apiDescription 课时资料删除
-* @apiName lessonMaterialDelete
-* @apiGroup Lesson
-*
-* @apiParam {Number[]} lessonMaterialId 删除课时资料ID列表
-*
-* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
-* @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number[]} [entity] 删除课时资料ID列表
-*
-*/
-
-
-
-
 
 
 /**
