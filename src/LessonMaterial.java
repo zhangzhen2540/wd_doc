@@ -24,17 +24,17 @@
 
 
 /**
-* @api {post} /lessonMaterial/copy/edit LessonMaterialCopy
+* @api {post} /lessonMaterial/copyTo/edit 课件资料复制
 * @apiDescription 复制课件资料到指定课时下
 * @apiName LessonMaterialCopy
 * @apiGroup Lesson
 *
-* @apiParam {Number} targetLessonId 课时ID
-* @apiParam {Number} lessonMaterialId 拷贝课件资料ID
+* @apiParam {Number} targetLessonId 复制目标课时ID
+* @apiParam {Number[]} lessonMaterialIds 拷贝课件资料ID
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number} [entity] 新建课时资料ID
+* @apiSuccess {Number} [entity] 复制目标课时ID
 *
 */
 

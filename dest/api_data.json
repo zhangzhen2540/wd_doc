@@ -1472,8 +1472,8 @@
   },
   {
     "type": "post",
-    "url": "/lessonMaterial/copy/edit",
-    "title": "LessonMaterialCopy",
+    "url": "/lessonMaterial/copyTo/edit",
+    "title": "课件资料复制",
     "description": "<p>复制课件资料到指定课时下</p>",
     "name": "LessonMaterialCopy",
     "group": "Lesson",
@@ -1485,13 +1485,13 @@
             "type": "Number",
             "optional": false,
             "field": "targetLessonId",
-            "description": "<p>课时ID</p>"
+            "description": "<p>复制目标课时ID</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "Number[]",
             "optional": false,
-            "field": "lessonMaterialId",
+            "field": "lessonMaterialIds",
             "description": "<p>拷贝课件资料ID</p>"
           }
         ]
@@ -1523,7 +1523,7 @@
             "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>新建课时资料ID</p>"
+            "description": "<p>复制目标课时ID</p>"
           }
         ]
       }
