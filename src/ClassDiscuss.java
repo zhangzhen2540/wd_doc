@@ -1,6 +1,6 @@
 
 /**
-* @api {get} /classDiscuss/get ClassDiscussGet
+* @api {get} /classDiscuss/get 课堂讨论获取
 * @apiDescription 课堂讨论获取
 * @apiName ClassDiscussGet
 * @apiGroup Lesson
@@ -24,7 +24,7 @@
 */
 
 /**
-* @api {get} /classDiscuss/list ClassDiscussList
+* @api {get} /classDiscuss/list 课堂讨论列表
 * @apiDescription 课堂讨论列表
 * @apiName ClassDiscussList
 * @apiGroup Lesson
@@ -41,7 +41,7 @@
 
 
 /**
-* @api {post} /classDiscuss/deletes ClassDiscussDelete
+* @api {post} /classDiscuss/deletes 课堂讨论删除
 * @apiDescription 课时讨论删除
 * @apiName ClassDiscussDelete
 * @apiGroup Lesson
@@ -56,7 +56,7 @@
 
 
 /**
-* @api {post} /classDiscuss/modify ClassDiscussModify
+* @api {post} /classDiscuss/modify 课堂讨论修改
 * @apiDescription 课时讨论修改
 * @apiName ClassDiscussModify
 * @apiGroup Lesson
@@ -75,7 +75,7 @@
 */
 
 /**
-* @api {post} /classDiscuss/add 课时讨论添加
+* @api {post} /classDiscuss/add 课堂讨论添加
 * @apiDescription 课时讨论添加
 * @apiName ClassDiscussAdd
 * @apiGroup Lesson

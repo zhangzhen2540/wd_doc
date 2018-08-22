@@ -531,7 +531,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/classDiscuss/add",
-    "title": "课时讨论添加",
+    "title": "课堂讨论添加",
     "description": "<p>课时讨论添加</p>",
     "name": "ClassDiscussAdd",
     "group": "Lesson",
@@ -614,7 +614,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/classDiscuss/deletes",
-    "title": "ClassDiscussDelete",
+    "title": "课堂讨论删除",
     "description": "<p>课时讨论删除</p>",
     "name": "ClassDiscussDelete",
     "group": "Lesson",
@@ -669,7 +669,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/classDiscuss/get",
-    "title": "ClassDiscussGet",
+    "title": "课堂讨论获取",
     "description": "<p>课堂讨论获取</p>",
     "name": "ClassDiscussGet",
     "group": "Lesson",
@@ -798,7 +798,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/classDiscuss/list",
-    "title": "ClassDiscussList",
+    "title": "课堂讨论列表",
     "description": "<p>课堂讨论列表</p>",
     "name": "ClassDiscussList",
     "group": "Lesson",
@@ -853,7 +853,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/classDiscuss/modify",
-    "title": "ClassDiscussModify",
+    "title": "课堂讨论修改",
     "description": "<p>课时讨论修改</p>",
     "name": "ClassDiscussModify",
     "group": "Lesson",
