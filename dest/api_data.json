@@ -530,6 +530,89 @@
   },
   {
     "type": "post",
+    "url": "/classDiscuss/add",
+    "title": "课时讨论添加",
+    "description": "<p>课时讨论添加</p>",
+    "name": "ClassDiscussAdd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "discussContent",
+            "description": "<p>讨论内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "attachmentPath",
+            "description": "<p>资料路径</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "answer",
+            "description": "<p>答案</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "analysis",
+            "description": "<p>解析</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时讨论ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/ClassDiscuss.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/classDiscuss/deletes",
     "title": "ClassDiscussDelete",
     "description": "<p>课时讨论删除</p>",

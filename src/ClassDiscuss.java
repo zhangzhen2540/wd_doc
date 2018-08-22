@@ -73,3 +73,22 @@
 * @apiSuccess {Number} [entity] 课时讨论ID
 *
 */
+
+/**
+* @api {post} /classDiscuss/add 课时讨论添加
+* @apiDescription 课时讨论添加
+* @apiName ClassDiscussAdd
+* @apiGroup Lesson
+*
+* @apiParam {Number} lessonId 课时ID
+* @apiParam {String} discussContent 讨论内容
+* @apiParam {String[]} [attachmentPath] 资料路径
+* @apiParam {String} [answer] 答案
+* @apiParam {String} [analysis] 解析
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Number} [entity] 课时讨论ID
+*
+*/
+
