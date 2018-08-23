@@ -4,6 +4,7 @@
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID
+* @apiParam {String} lessonCode 课时上课code，与lessonId二选一，同时传递时lessonId优先
 *
 * @apiParamExample {String} Request-Example: 
 *    lessonId=1

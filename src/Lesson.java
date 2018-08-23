@@ -79,3 +79,112 @@
 *
 */
 
+
+
+
+
+/**
+* @api {get} /lesson/list 课时列表
+* @apiDescription 课时列表
+* @apiName lessonList
+* @apiGroup Lesson
+*
+* @apiParam {String} [lessonName] 课时名称（模糊匹配）
+* @apiParam {String} [courseId] 课程ID
+* @apiParam {Number} [teacherGroupId] 教师组ID
+* @apiParam {Number=0,1} [status] 课时状态，1:启用，0:禁用
+* @apiParam {Number=0,1} [deleteStatus] 删除状态，1:未删除，0：已删除
+*
+* @apiParamExample {String} Request-Example: 
+*  courseId=1&lessonName=name
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object[]} [entity] 课程信息
+* @apiSuccess {Number} entity.id 课时ID
+* @apiSuccess {Number} entity.courseId 课程ID
+* @apiSuccess {String} entity.lessonName 课时名称
+* @apiSuccess {String} [entity.lessonDesc] 课时简介
+* @apiSuccess {Number=0,1} entity.status 课时状态，1：启用，0：禁用
+* @apiSuccess {Number=0,1} entity.deleteStatus 删除状态，1：未删除
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": [
+        {
+            "courseId": 1,
+            "createTime": 1534936024000,
+            "createUserId": 2,
+            "deleteStatus": 1,
+            "id": 5,
+            "lessonName": "lesson a name",
+            "status": 1,
+            "teacherGroupId": 1,
+            "updateTime": 1534936024000,
+            "updateUserId": 2
+        }
+    ],
+    "message": "\"SUCCESS\""
+}
+*/
+
+
+
+
+/**
+* @api {get} /lesson/pageList 课时分页
+* @apiDescription 课时分页
+* @apiName lessonPageList
+* @apiGroup Lesson
+*
+* @apiParam {String} [lessonName] 课时名称（模糊匹配）
+* @apiParam {String} [courseId] 课程ID
+* @apiParam {Number} [teacherGroupId] 教师组ID
+* @apiParam {Number=0,1} [status] 课时状态，1:启用，0:禁用
+* @apiParam {Number=0,1} [deleteStatus] 删除状态，1:未删除，0：已删除
+* @apiParam {Number} pageSize 页最大数量
+* @apiParam {Number} pageIndex 页码
+*
+* @apiParamExample {String} Request-Example: 
+*  courseId=1&lessonName=name
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object} [entity] 课程信息
+* @apiSuccess {Number} entity.total 结果总数
+* @apiSuccess {Number} entity.pageSize 页最大数量
+* @apiSuccess {Number} entity.pageIndex 页码
+* @apiSuccess {Object[]} entity.list 课时列表
+* @apiSuccess {Number} entity.list.id 课时ID
+* @apiSuccess {Number} entity.list.courseId 课程ID
+* @apiSuccess {String} entity.list.lessonName 课时名称
+* @apiSuccess {String} [entity.list.lessonDesc] 课时简介
+* @apiSuccess {Number=0,1} entity.list.status 课时状态，1：启用，0：禁用
+* @apiSuccess {Number=0,1} entity.list.deleteStatus 删除状态，1：未删除
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": {
+        "list": [
+            {
+                "courseId": 1,
+                "createTime": 1534936024000,
+                "createUserId": 2,
+                "deleteStatus": 1,
+                "id": 5,
+                "lessonName": "lesson a name",
+                "status": 1,
+                "teacherGroupId": 1,
+                "updateTime": 1534936024000,
+                "updateUserId": 2
+            }
+        ],
+        "pageIndex": 0,
+        "pageSize": 0,
+        "total": 1
+    },
+    "message": "\"SUCCESS\""
+}
+*/
