@@ -196,3 +196,29 @@
     "message": "\"SUCCESS\""
 }
 */
+
+
+
+
+
+
+/**
+* @api {post} /choiceQuestion/resetSort/edit 选择题顺序调整
+* @apiDescription 选择题顺序调整
+* @apiName ChoiceQuestionResetSort
+* @apiGroup Lesson
+*
+* @apiParam {Number[]} data 问题ID列表，按问题顺序排列
+* @apiParamExample Param-Example:
+[3, 2]
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object} [entity] 问题
+*
+* @apiSuccessExample Succcess-Example:
+{
+    "code": 200,
+    "entity": "[3, 2]"
+}
+*/

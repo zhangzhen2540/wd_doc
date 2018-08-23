@@ -1293,6 +1293,75 @@
   },
   {
     "type": "post",
+    "url": "/choiceQuestion/resetSort/edit",
+    "title": "选择题顺序调整",
+    "description": "<p>选择题顺序调整</p>",
+    "name": "ChoiceQuestionResetSort",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "data",
+            "description": "<p>问题ID列表，按问题顺序排列</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "[3, 2]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>问题</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"[3, 2]\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Question.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/classDiscuss/add",
     "title": "课堂讨论添加",
     "description": "<p>课时讨论添加</p>",
