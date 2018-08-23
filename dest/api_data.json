@@ -779,10 +779,10 @@
           },
           {
             "group": "Success 200",
-            "type": "Number[]",
+            "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>删除课堂讨论ID</p>"
+            "description": "<p>问题ID</p>"
           }
         ]
       }
@@ -1150,10 +1150,10 @@
           },
           {
             "group": "Success 200",
-            "type": "Number[]",
+            "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>删除课堂讨论ID</p>"
+            "description": "<p>问题ID</p>"
           }
         ]
       }

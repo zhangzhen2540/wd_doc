@@ -16,7 +16,7 @@
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number[]} [entity] 删除课堂讨论ID
+* @apiSuccess {Number} [entity] 问题ID
 *
 */
 
@@ -40,7 +40,7 @@
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Number[]} [entity] 删除课堂讨论ID
+* @apiSuccess {Number} [entity] 问题ID
 *
 */
 
