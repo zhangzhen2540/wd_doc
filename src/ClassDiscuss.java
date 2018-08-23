@@ -70,7 +70,7 @@
 * @apiParam {String} discussContent 讨论内容
 * @apiParam {String} [answer] 答案
 * @apiParam {String} [analysis] 解析
-* @apiParam {Object} [attachments] 附件
+* @apiParam {Object[]} [attachments] 附件
 * @apiParam {String} attachments.fileLocalPath 附件路径
 * @apiParam {String} attachments.fileName 附件名
 *
@@ -90,7 +90,7 @@
 * @apiParam {String} discussContent 讨论内容
 * @apiParam {String} [answer] 答案
 * @apiParam {String} [analysis] 解析
-* @apiParam {Object} [attachments] 附件
+* @apiParam {Object[]} [attachments] 附件
 * @apiParam {String} attachments.fileLocalPath 附件路径
 * @apiParam {String} attachments.fileName 附件名
 *

@@ -708,7 +708,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Object",
+            "type": "Object[]",
             "optional": true,
             "field": "attachments",
             "description": "<p>附件</p>"
@@ -1079,7 +1079,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "Object",
+            "type": "Object[]",
             "optional": true,
             "field": "attachments",
             "description": "<p>附件</p>"
