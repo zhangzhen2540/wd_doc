@@ -1178,6 +1178,20 @@
             "optional": false,
             "field": "lessonId",
             "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>页最大结果数量</p>"
           }
         ]
       }
@@ -1205,7 +1219,7 @@
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Object",
             "optional": true,
             "field": "entity",
             "description": "<p>响应结果</p>"
@@ -1874,7 +1888,14 @@
             "description": "<p>附件名</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "{\n\t\"lessonId\": \"2\",\n\t\"assignmentName\": \"一战影响\",\n\t\"attachments\": [\n\t\t{\n\t\t\t\"fileName\": \"readme.doc\",\n\t\t\t\"fileLocalPath\": \"2d7f6451c7a04a9a8e970216694edd00.doc\"\n\t\t}\t\n\t]\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -1903,6 +1924,68 @@
             "optional": true,
             "field": "entity",
             "description": "<p>课堂作业ID</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonAssignment.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lessonAssignment/deletes",
+    "title": "课堂作业删除",
+    "description": "<p>课堂作业删除</p>",
+    "name": "LessonAssignmentDelete",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "data",
+            "description": "<p>课堂作业ID列表</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "[1, 2, 3]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>删除课堂作业ID</p>"
           }
         ]
       }
@@ -1964,7 +2047,14 @@
             "description": "<p>附件名</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "{\n\t\"id\": 2,\n\t\"lessonId\": \"2\",\n\t\"assignmentName\": \"一战发起国\",\n\t\"attachments\": [\n\t\t{\n\t\t\t\"fileName\": \"haha哈哈ha.doc\",\n\t\t\t\"fileLocalPath\": \"b82986854a5a4d72ad5893e9ab012e38.doc\"\n\t\t}\t\n\t]\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -2100,7 +2190,7 @@
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Number",
             "optional": false,
             "field": "entity.attachments.fileSize",
             "description": "<p>附件大小，单位byte</p>"
@@ -2120,7 +2210,237 @@
             "description": "<p>排序编号</p>"
           }
         ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"assignmentName\": \"一战影响\",\n        \"attachments\": [\n            {\n                \"createTime\": 1535044930000,\n                \"exerciseId\": 2,\n                \"exerciseType\": 2,\n                \"fileLocalPath\": \"\\\\word\\\\2d7f6451c7a04a9a8e970216694edd00_1535016128693_G95M.doc\",\n                \"fileName\": \"readme.doc\",\n                \"fileSize\": 61952,\n                \"fileType\": \"word\",\n                \"fileUrl\": \"/word/2d7f6451c7a04a9a8e970216694edd00_1535016128693_G95M.doc\",\n                \"id\": 17,\n                \"sort\": 1\n            }\n        ],\n        \"createTime\": 1535044930000,\n        \"createUserId\": 1,\n        \"id\": 2,\n        \"lessonId\": 2,\n        \"sort\": 2,\n        \"status\": 1,\n        \"updateTime\": 1535044930000,\n        \"updateUserId\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonAssignment.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/lessonAssignment/list",
+    "title": "课堂作业列表",
+    "description": "<p>课堂作业列表</p>",
+    "name": "LessonAssignmentList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "status",
+            "description": "<p>状态</p>"
+          }
+        ]
       }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>响应结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.assignmentName",
+            "description": "<p>作业标题</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"assignmentName\": \"一战影响\",\n            \"createTime\": 1535044973000,\n            \"createUserId\": 1,\n            \"id\": 3,\n            \"lessonId\": 2,\n            \"sort\": 3,\n            \"status\": 1,\n            \"updateTime\": 1535044973000,\n            \"updateUserId\": 1\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonAssignment.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/lessonAssignment/pageList",
+    "title": "课堂作业分页",
+    "description": "<p>课堂作业分页</p>",
+    "name": "LessonAssignmentPageList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "status",
+            "description": "<p>状态</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>页最大结果数量</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "lessonId=2&pageIndex=2&pageSize=2",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>响应结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>页最大结果数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>总结果数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>作业列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.list.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.list.assignmentName",
+            "description": "<p>作业标题</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"assignmentName\": \"一战影响\",\n                \"createTime\": 1535044973000,\n                \"createUserId\": 1,\n                \"id\": 3,\n                \"lessonId\": 2,\n                \"sort\": 3,\n                \"status\": 1,\n                \"updateTime\": 1535044973000,\n                \"updateUserId\": 1\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 3\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "src/LessonAssignment.java",

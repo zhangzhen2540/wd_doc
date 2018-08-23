@@ -90,10 +90,12 @@
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID
+* @apiParam {Number} pageIndex 页码
+* @apiParam {Number} pageSize 页最大结果数量
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Object[]} [entity] 响应结果
+* @apiSuccess {Object} [entity] 响应结果
 * @apiSuccess {Number} entity.pageIndex 页码
 * @apiSuccess {Number} entity.pageSize 页最大结果数量
 * @apiSuccess {Number} entity.total 总结果数量
