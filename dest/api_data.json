@@ -2968,6 +2968,153 @@
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/questionAnser/submitHistory/query",
+    "title": "答题记录查询",
+    "description": "<p>答题记录查询</p>",
+    "name": "QuestionAnserHistoryQuery",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "questionId",
+            "description": "<p>问题ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "questionType",
+            "description": "<p>问题类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "studentId",
+            "description": "<p>答题学生ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "isSubmit",
+            "description": "<p>是否提交</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>答题记录</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>答题记录ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.questionId",
+            "description": "<p>问题ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.questionType",
+            "description": "<p>问题类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.studentId",
+            "description": "<p>答题学生ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.studentName",
+            "description": "<p>答题学生姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.studentClassRecordId",
+            "description": "<p>答题学生上课记录ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.answerContent",
+            "description": "<p>答题内容</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.isSubmit",
+            "description": "<p>是否已提交</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>答案提交时间（时间戳）</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Question.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "post",
     "url": "/questionAnswer/submit/edit",
     "title": "QuestionAnswerSubmit",
@@ -4062,8 +4209,8 @@
   {
     "type": "post",
     "url": "/user/updatePassword",
-    "title": "UserUpdatePassword",
-    "name": "UserUpdatePassword",
+    "title": "修改密码",
+    "name": "____",
     "group": "User",
     "parameter": {
       "fields": {
@@ -4128,6 +4275,74 @@
         {
           "title": "Error-Example:",
           "content": "{\"code\": 500, \"message\": \"旧密码错误\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/User.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user/resetPassword/edit",
+    "title": "用户密码重置",
+    "name": "______",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "userIds",
+            "description": "<p>重置密码用户ID列表</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "{\"userIds\": [1,2,3]}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>重置密码用户ID列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"[1]\"\n}",
           "type": "json"
         }
       ]

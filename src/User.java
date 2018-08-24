@@ -44,8 +44,8 @@
 
 
 /**
-* @api {post} /user/updatePassword UserUpdatePassword
-* @apiName UserUpdatePassword
+* @api {post} /user/updatePassword 修改密码
+* @apiName 修改密码
 * @apiGroup User
 *
 * @apiParam {String} oldPassword 旧密码
@@ -60,4 +60,25 @@
 *
 * @apiErrorExample {json} Error-Example:
 * {"code": 500, "message": "旧密码错误"}
+*/
+
+/**
+* @api {post} /user/resetPassword/edit 用户密码重置
+* @apiName 用户密码重置
+* @apiGroup User
+*
+* @apiParam {Number[]} userIds 重置密码用户ID列表
+*
+* @apiParamExample Param-Example:
+* {"userIds": [1,2,3]} 
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [entity] 重置密码用户ID列表
+* @apiSuccess {String} [message] 响应描述
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": "[1]"
+}
 */
