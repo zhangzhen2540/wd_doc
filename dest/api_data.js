@@ -4158,6 +4158,117 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/studentClassRecord/list",
+    "title": "学生上课记录列表",
+    "description": "<p>学生上课记录列表</p>",
+    "name": "StudentClassRecordList",
+    "group": "Student",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lessonCode",
+            "description": "<p>课时code</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "studentId",
+            "description": "<p>学生ID，教师可以查询特定学生的记录</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>记录ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.studentId",
+            "description": "<p>上课学生ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.teacherRecordId",
+            "description": "<p>上课教师</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.lessonCode",
+            "description": "<p>课时上课code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.startTime",
+            "description": "<p>学生上课时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.endTime",
+            "description": "<p>学生下课时间</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/StudentClassRecord.java",
+    "groupTitle": "Student"
+  },
+  {
     "type": "post",
     "url": "/teacher/import/edit",
     "title": "TeacherDataImport",
