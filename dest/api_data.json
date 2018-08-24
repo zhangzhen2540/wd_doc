@@ -4035,6 +4035,130 @@
   },
   {
     "type": "post",
+    "url": "/teching/end/edit",
+    "title": "教师下课",
+    "description": "<p>教师下课</p>",
+    "name": "teacherTeachingEnd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "lessonCode",
+            "description": "<p>课时上课code</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: ",
+          "content": "{\"lessonCode\": \"ABCD\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时上课code</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Teacher.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/teching/start/edit",
+    "title": "教师上课",
+    "description": "<p>教师上课，如果课时下存在教师未下课的记录，则继续上次的上课，否则新增一条上课记录</p>",
+    "name": "teacherTeachingStart",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: ",
+          "content": "{\"lessonId\": 1}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时上课code(学生凭此code登录系统)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/Teacher.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/teacher/import/edit",
     "title": "TeacherDataImport",
     "description": "<p>教师数据导入</p>",
