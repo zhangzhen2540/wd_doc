@@ -1,5 +1,5 @@
 /**
-* @api {post} /questionAnswer/submit/edit QuestionAnswerSubmit
+* @api {post} /questionAnswer/submit/edit 提交问题答案
 * @apiDescription 提交问题答案
 * @apiName QuestionAnswerSubmit
 * @apiGroup Lesson

@@ -1,5 +1,5 @@
 /**
-* @api {get} /course/teachRecord/query CourseTeachRecordQuery
+* @api {get} /course/teachRecord/query 课程上课记录查询
 * @apiDescription 课程上课记录查询
 * @apiName CourseTeachRecordQuery
 * @apiGroup Course

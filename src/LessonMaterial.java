@@ -42,7 +42,7 @@
 
 
 /**
-* @api {post} /lessonMaterial/deletes LessonMaterialDelete
+* @api {post} /lessonMaterial/deletes 课时资料删除
 * @apiDescription 课时资料删除
 * @apiName lessonMaterialDelete
 * @apiGroup Lesson

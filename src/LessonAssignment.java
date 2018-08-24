@@ -31,7 +31,7 @@
 */
 
 /**
-* @api {post} /lessonAssignment/update LessonAssignmentEdit
+* @api {post} /lessonAssignment/update 课堂作业修改
 * @apiDescription 课堂作业修改
 * @apiName LessonAssignmentEdit
 * @apiGroup Lesson

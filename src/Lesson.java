@@ -1,5 +1,5 @@
 /**
-* @api {post} /lesson/add PrepareLesson
+* @api {post} /lesson/add 课时创建
 * @apiDescription 备课
 * @apiName prepareLesson
 * @apiGroup Lesson
@@ -21,7 +21,7 @@
 */
 
 /**
-* @api {post} /lesson/edit LessonEdit
+* @api {post} /lesson/edit 课时编辑
 * @apiDescription 课时编辑
 * @apiName lessonEdit
 * @apiGroup Lesson
@@ -41,7 +41,7 @@
 */
 
 /**
-* @api {post} /lesson/deletes LessonDelete
+* @api {post} /lesson/deletes 课时删除
 * @apiDescription 课时删除
 * @apiName lessonDelete
 * @apiGroup Lesson

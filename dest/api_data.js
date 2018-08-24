@@ -218,7 +218,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/course/teachRecord/query",
-    "title": "CourseTeachRecordQuery",
+    "title": "课程上课记录查询",
     "description": "<p>课程上课记录查询</p>",
     "name": "CourseTeachRecordQuery",
     "group": "Course",
@@ -2208,7 +2208,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lessonAssignment/update",
-    "title": "LessonAssignmentEdit",
+    "title": "课堂作业修改",
     "description": "<p>课堂作业修改</p>",
     "name": "LessonAssignmentEdit",
     "group": "Lesson",
@@ -3117,7 +3117,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/questionAnswer/submit/edit",
-    "title": "QuestionAnswerSubmit",
+    "title": "提交问题答案",
     "description": "<p>提交问题答案</p>",
     "name": "QuestionAnswerSubmit",
     "group": "Lesson",
@@ -3386,7 +3386,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lesson/deletes",
-    "title": "LessonDelete",
+    "title": "课时删除",
     "description": "<p>课时删除</p>",
     "name": "lessonDelete",
     "group": "Lesson",
@@ -3448,7 +3448,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lesson/edit",
-    "title": "LessonEdit",
+    "title": "课时编辑",
     "description": "<p>课时编辑</p>",
     "name": "lessonEdit",
     "group": "Lesson",
@@ -3791,7 +3791,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lessonMaterial/deletes",
-    "title": "LessonMaterialDelete",
+    "title": "课时资料删除",
     "description": "<p>课时资料删除</p>",
     "name": "lessonMaterialDelete",
     "group": "Lesson",
@@ -4043,7 +4043,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/lesson/add",
-    "title": "PrepareLesson",
+    "title": "课时创建",
     "description": "<p>备课</p>",
     "name": "prepareLesson",
     "group": "Lesson",
