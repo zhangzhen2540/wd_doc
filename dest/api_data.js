@@ -2931,7 +2931,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Object",
             "optional": true,
             "field": "entity",
             "description": "<p>答题记录</p>"
@@ -2940,49 +2940,63 @@ define({ "api": [
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.id",
+            "field": "entity.studentNumber",
+            "description": "<p>上课学生总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.questionAnswerRecordVos",
+            "description": "<p>答题记录列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.questionAnswerRecordVos.id",
             "description": "<p>答题记录ID</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.questionId",
+            "field": "entity.questionAnswerRecordVos.questionId",
             "description": "<p>问题ID</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.questionType",
+            "field": "entity.questionAnswerRecordVos.questionType",
             "description": "<p>问题类型</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.studentId",
+            "field": "entity.questionAnswerRecordVos.studentId",
             "description": "<p>答题学生ID</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "entity.studentName",
+            "field": "entity.questionAnswerRecordVos.studentName",
             "description": "<p>答题学生姓名</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.studentClassRecordId",
+            "field": "entity.questionAnswerRecordVos.studentClassRecordId",
             "description": "<p>答题学生上课记录ID</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "entity.answerContent",
+            "field": "entity.questionAnswerRecordVos.answerContent",
             "description": "<p>答题内容</p>"
           },
           {
@@ -2993,14 +3007,14 @@ define({ "api": [
               "1"
             ],
             "optional": false,
-            "field": "entity.isSubmit",
+            "field": "entity.questionAnswerRecordVos.isSubmit",
             "description": "<p>是否已提交</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.updateTime",
+            "field": "entity.questionAnswerRecordVos.updateTime",
             "description": "<p>答案提交时间（时间戳）</p>"
           }
         ]

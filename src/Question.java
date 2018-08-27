@@ -240,14 +240,16 @@
 * 
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Object[]} [entity] 答题记录
-* @apiSuccess {Number} entity.id 答题记录ID   
-* @apiSuccess {Number} entity.questionId 问题ID
-* @apiSuccess {Number} entity.questionType 问题类型   
-* @apiSuccess {Number} entity.studentId 答题学生ID   
-* @apiSuccess {String} entity.studentName 答题学生姓名   
-* @apiSuccess {Number} entity.studentClassRecordId 答题学生上课记录ID
-* @apiSuccess {String} entity.answerContent 答题内容
-* @apiSuccess {Number=0,1} entity.isSubmit 是否已提交
-* @apiSuccess {Number} entity.updateTime 答案提交时间（时间戳）
+* @apiSuccess {Object} [entity] 答题记录
+* @apiSuccess {Number} entity.studentNumber 上课学生总数
+* @apiSuccess {Object[]} entity.questionAnswerRecordVos 答题记录列表
+* @apiSuccess {Number} entity.questionAnswerRecordVos.id 答题记录ID   
+* @apiSuccess {Number} entity.questionAnswerRecordVos.questionId 问题ID
+* @apiSuccess {Number} entity.questionAnswerRecordVos.questionType 问题类型   
+* @apiSuccess {Number} entity.questionAnswerRecordVos.studentId 答题学生ID   
+* @apiSuccess {String} entity.questionAnswerRecordVos.studentName 答题学生姓名   
+* @apiSuccess {Number} entity.questionAnswerRecordVos.studentClassRecordId 答题学生上课记录ID
+* @apiSuccess {String} entity.questionAnswerRecordVos.answerContent 答题内容
+* @apiSuccess {Number=0,1} entity.questionAnswerRecordVos.isSubmit 是否已提交
+* @apiSuccess {Number} entity.questionAnswerRecordVos.updateTime 答案提交时间（时间戳）
 */
