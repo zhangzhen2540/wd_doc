@@ -159,9 +159,9 @@ materialName=abc
 
 
 /**
-* @api {post} /materialBank/list 公共资源列表
-* @apiDescription 公共资源列表
-* @apiName MaterialBankList
+* @api {post} /materialBank/list 公共资源分页列表
+* @apiDescription 公共资源分页列表
+* @apiName MaterialBankPageList
 * @apiGroup Admin
 *
 * @apiParam {String} [materialName] 资源名称(模糊匹配)
