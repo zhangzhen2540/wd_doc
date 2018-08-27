@@ -9,7 +9,7 @@
 * @apiParam {String} [materialType] 资料归属类别（关联字典表code）
 *
 * @apiParamExample Param-Example:
-*
+* {}
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
