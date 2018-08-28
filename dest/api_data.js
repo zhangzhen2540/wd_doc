@@ -2671,6 +2671,311 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/documentQuestion/add",
+    "title": "附件题添加",
+    "description": "<p>附件题添加</p>",
+    "name": "DocumentQuestionAdd",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>题目内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object[]",
+            "optional": false,
+            "field": "attachments",
+            "description": "<p>附件列表</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件文件名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件文件路径</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "{\n\t\"lessonId\": 2,\n\t\"attachments\": [\n\t\t{\n\t        \"fileName\": \"test-file.txt\",\n\t        \"fileLocalPath\": \"877b33030f0248beb9c35fa59dad4a8d.txt\"\n\t\t}\n\t]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>新增题ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/DocumentQuestion.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/documentQuestion/deletes",
+    "title": "附件题删除",
+    "description": "<p>附件题删除</p>",
+    "name": "DocumentQuestionDeletes",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "id",
+            "description": "<p>题目ID列表</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "[1, 2, 3]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>删除题目ID列表</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "[1, 2, 3]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/DocumentQuestion.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/documentQuestion/list",
+    "title": "附件题列表",
+    "description": "<p>附件题列表</p>",
+    "name": "DocumentQuestionList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>题目列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>题目ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.title",
+            "description": "<p>题目标题</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.sort",
+            "description": "<p>排序</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.createTime",
+            "description": "<p>创建时间时间戳</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.attachments",
+            "description": "<p>附件列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileName",
+            "description": "<p>文件名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.attachments.fileSize",
+            "description": "<p>文件大小，单位byte</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileType",
+            "description": "<p>文件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.attachments.fileUrl",
+            "description": "<p>访问路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.attachments.sort",
+            "description": "<p>附件排序</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"attachments\": [\n                {\n                    \"createTime\": 1535482993000,\n                    \"exerciseId\": 1,\n                    \"exerciseType\": 3,\n                    \"fileLocalPath\": \"\\\\other\\\\877b33030f0248beb9c35fa59dad4a8d_1535454193581_Wehe.txt\",\n                    \"fileName\": \"test-file.txt\",\n                    \"fileSize\": 59904,\n                    \"fileType\": \"other\",\n                    \"fileUrl\": \"/other/877b33030f0248beb9c35fa59dad4a8d_1535454193581_Wehe.txt\",\n                    \"id\": 12,\n                    \"sort\": 1\n                }\n            ],\n            \"createTime\": 1535482993000,\n            \"createUserId\": 2,\n            \"id\": 1,\n            \"lessonId\": 2,\n            \"sort\": 1,\n            \"updateTime\": 1535482993000,\n            \"updateUserId\": 2\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/DocumentQuestion.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
     "url": "/lessonAssignment/add",
     "title": "课堂作业添加",
     "description": "<p>课堂作业添加</p>",
@@ -3687,9 +3992,37 @@ define({ "api": [
             "optional": true,
             "field": "isSubmit",
             "description": "<p>是否提交</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object[]",
+            "optional": true,
+            "field": "attachments",
+            "description": "<p>附件列表</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "{",
+          "content": "{\n\t\"questionId\": 1,\n\t\"questionType\": 6,\n\t\"answerContent\": \"\",\n\t\"isSubmit\": 1,\n\t\"attachments\": [\n\t{\n\t\t\"fileLocalPath\": \"877b33030f0248beb9c35fa59dad4a8d.txt\",\n\t\t\"fileName\": \"ans.txt\"\n\t}\n\t]\n}",
+          "type": "json"
+        }
+      ]
     },
     "success": {
       "fields": {
@@ -3717,7 +4050,7 @@ define({ "api": [
             "type": "Number",
             "optional": true,
             "field": "entity",
-            "description": "<p>答题记录ID</p>"
+            "description": "<p>答题记录ID</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: &quot;1&quot; }</p>"
           }
         ]
       }
