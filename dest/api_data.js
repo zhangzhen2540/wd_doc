@@ -5302,6 +5302,667 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/feedback/add",
+    "title": "意见反馈添加",
+    "description": "<p>意见反馈添加</p>",
+    "name": "FeedbackAdd",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "replyId",
+            "description": "<p>回复反馈ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object[]",
+            "optional": false,
+            "field": "attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileName",
+            "description": "<p>附件名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attachments.fileLocalPath",
+            "description": "<p>附件路径</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "{\n\t\"content\": \"I like green\",\n\t\"attachments\": [\n\t\t{\n\t\t\t\"fileName\": \"red.gif\",\n\t\t\t\"fileLocalPath\": \"d207d00f7b0246679c5ffe9e37d3f8d1.gif\"\n\t\t},\n\t\t{\n\t\t\t\"fileName\": \"yellow.gif\",\n\t\t\t\"fileLocalPath\": \"d207d00f7b0246679c5ffe9e37d3f8d1.gif\"\n\t\t},\n\t\t{\n\t\t\t\"fileName\": \"green.gif\",\n\t\t\t\"fileLocalPath\": \"d207d00f7b0246679c5ffe9e37d3f8d1.gif\"\n\t\t}\n\t]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>新增ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/feedback/deletes",
+    "title": "意见反馈删除",
+    "description": "<p>意见反馈删除</p>",
+    "name": "FeedbackDelete",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "id",
+            "description": "<p>意见反馈ID列表</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "[1, 3]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>删除ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"[1, 3]\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/feedback/list",
+    "title": "意见反馈列表",
+    "description": "<p>意见反馈列表</p>",
+    "name": "FeedbackList",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>反馈起始时间</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>反馈结束时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "replyStatus=1&startTime=2018-08-01%2010:01:01&endTime=2018-09-30%2012:01:01",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>反馈列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.replyId",
+            "description": "<p>回复意见ID（非回复为-1）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.userId",
+            "description": "<p>反馈用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.userName",
+            "description": "<p>反馈用户名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.content",
+            "description": "<p>反馈内容</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"content\": \"Whice color is you like\",\n            \"createTime\": 1535553155000,\n            \"createUserId\": 2,\n            \"deleteStatus\": 1,\n            \"id\": 6,\n            \"replyId\": -1,\n            \"replyStatus\": 1,\n            \"rootId\": 6,\n            \"updateTime\": 1535553664000,\n            \"updateUserId\": 2,\n            \"userId\": 2,\n            \"userName\": \"teacher\"\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/feedback/list",
+    "title": "意见反馈列表",
+    "description": "<p>意见反馈列表</p>",
+    "name": "FeedbackList",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>反馈起始时间</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>反馈结束时间</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>页最大展示数量</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "replyStatus=1&startTime=2018-08-01%2010:01:01&endTime=2018-09-30%2012:01:01",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>总结果数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>页最大展示数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>反馈列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.id",
+            "description": "<p>ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.replyId",
+            "description": "<p>回复意见ID（非回复为-1）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.userId",
+            "description": "<p>反馈用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.userName",
+            "description": "<p>反馈用户名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.content",
+            "description": "<p>反馈内容</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"content\": \"Whice color is you like\",\n                \"createTime\": 1535553155000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 6,\n                \"replyId\": -1,\n                \"replyStatus\": 1,\n                \"rootId\": 6,\n                \"updateTime\": 1535553664000,\n                \"updateUserId\": 2,\n                \"userId\": 2,\n                \"userName\": \"teacher\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/feedback/reply/query",
+    "title": "意见反馈及回复查询",
+    "description": "<p>意见反馈及回复查询</p>",
+    "name": "FeedbackReplyQuery",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "rootId",
+            "description": "<p>根反馈ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>页最大展示数量</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "rootId=6",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>总结果数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>页最大展示数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>反馈列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.id",
+            "description": "<p>ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.replyId",
+            "description": "<p>回复意见ID（非回复为-1）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.userId",
+            "description": "<p>反馈用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.userName",
+            "description": "<p>反馈用户名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.content",
+            "description": "<p>反馈内容</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list.attachments",
+            "description": "<p>附件</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.fileName",
+            "description": "<p>附件名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.fileUrl",
+            "description": "<p>附件访问路径</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.fileSize",
+            "description": "<p>附件大小</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.fileType",
+            "description": "<p>附件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.sort",
+            "description": "<p>附件排序</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"attachments\": [\n                    {\n                        \"createTime\": 1535553155000,\n                        \"exerciseId\": 6,\n                        \"exerciseType\": 200,\n                        \"fileLocalPath\": \"\\\\image\\\\d207d00f7b0246679c5ffe9e37d3f8d1_1535524355162_yzMq.gif\",\n                        \"fileName\": \"red.gif\",\n                        \"fileSize\": 2747952,\n                        \"fileType\": \"image\",\n                        \"fileUrl\": \"/image/d207d00f7b0246679c5ffe9e37d3f8d1_1535524355162_yzMq.gif\",\n                        \"id\": 14,\n                        \"sort\": 1\n                    }\n                ],\n                \"content\": \"Whice color is you like\",\n                \"createTime\": 1535553155000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 6,\n                \"replyId\": -1,\n                \"replyStatus\": 1,\n                \"rootId\": 6,\n                \"updateTime\": 1535553664000,\n                \"updateUserId\": 2,\n                \"userId\": 2,\n                \"userName\": \"teacher\"\n            },\n            {\n                \"content\": \"I like green\",\n                \"createTime\": 1535553201000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 7,\n                \"replyId\": 6,\n                \"replyStatus\": 1,\n                \"rootId\": 6,\n                \"updateTime\": 1535553664000,\n                \"updateUserId\": 2,\n                \"userId\": 2,\n                \"userName\": \"teacher\"\n            },\n            {\n                \"content\": \"Ok\",\n                \"createTime\": 1535553219000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 8,\n                \"replyId\": 7,\n                \"replyStatus\": 0,\n                \"rootId\": 6,\n                \"updateTime\": 1535553664000,\n                \"updateUserId\": 2,\n                \"userId\": 2,\n                \"userName\": \"teacher\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 3\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/user/updatePassword",
     "title": "修改密码",
     "name": "____",
