@@ -206,11 +206,11 @@ rootId=6
 * @apiSuccess {String} entity.list.userName 反馈用户名
 * @apiSuccess {String} entity.list.content 反馈内容
 * @apiSuccess {Object[]} entity.list.attachments 附件
-* @apiSuccess {String} entity.list.fileName 附件名
-* @apiSuccess {String} entity.list.fileUrl	附件访问路径
-* @apiSuccess {Number} entity.list.fileSize	附件大小
-* @apiSuccess {String} entity.list.fileType 附件类型
-* @apiSuccess {Number} entity.list.sort 附件排序
+* @apiSuccess {String} entity.list.attachments.fileName 附件名
+* @apiSuccess {String} entity.list.attachments.fileUrl	附件访问路径
+* @apiSuccess {Number} entity.list.attachments.fileSize	附件大小
+* @apiSuccess {String} entity.list.attachments.fileType 附件类型
+* @apiSuccess {Number} entity.list.attachments.sort 附件排序
 *
 * @apiSuccessExample Succcess-Example:
 {

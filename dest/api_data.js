@@ -5916,35 +5916,35 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "entity.list.fileName",
+            "field": "entity.list.attachments.fileName",
             "description": "<p>附件名</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "entity.list.fileUrl",
+            "field": "entity.list.attachments.fileUrl",
             "description": "<p>附件访问路径</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.list.fileSize",
+            "field": "entity.list.attachments.fileSize",
             "description": "<p>附件大小</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "entity.list.fileType",
+            "field": "entity.list.attachments.fileType",
             "description": "<p>附件类型</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "entity.list.sort",
+            "field": "entity.list.attachments.sort",
             "description": "<p>附件排序</p>"
           }
         ]
