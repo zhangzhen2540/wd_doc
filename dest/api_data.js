@@ -1619,7 +1619,7 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/choiceQuestion/get",
     "title": "选择题详情",
     "description": "<p>选择题详情</p>",
@@ -1759,7 +1759,7 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/choiceQuestion/list",
     "title": "选择题列表",
     "description": "<p>选择题列表</p>",
@@ -1990,7 +1990,7 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
-    "type": "post",
+    "type": "get",
     "url": "/choiceQuestion/pageList",
     "title": "选择题分页",
     "description": "<p>选择题分页</p>",
@@ -3786,7 +3786,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/questionAnser/submitHistory/query",
+    "url": "/questionAnswer/submitHistory/query",
     "title": "答题记录查询",
     "description": "<p>答题记录查询</p>",
     "name": "QuestionAnserHistoryQuery",

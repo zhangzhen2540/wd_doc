@@ -46,7 +46,7 @@
 
 
 /**
-* @api {post} /choiceQuestion/list 选择题列表
+* @api {get} /choiceQuestion/list 选择题列表
 * @apiDescription 选择题列表
 * @apiName ChoiceQuestionList
 * @apiGroup Lesson
@@ -84,7 +84,7 @@
 
 
 /**
-* @api {post} /choiceQuestion/pageList 选择题分页
+* @api {get} /choiceQuestion/pageList 选择题分页
 * @apiDescription 选择题分页
 * @apiName ChoiceQuestionPageList
 * @apiGroup Lesson
@@ -134,7 +134,7 @@
 
 
 /**
-* @api {post} /choiceQuestion/get 选择题详情
+* @api {get} /choiceQuestion/get 选择题详情
 * @apiDescription 选择题详情
 * @apiName ChoiceQuestionGet
 * @apiGroup Lesson
@@ -228,7 +228,7 @@
 
 
 /**
-* @api {get} /questionAnser/submitHistory/query 答题记录查询
+* @api {get} /questionAnswer/submitHistory/query 答题记录查询
 * @apiDescription 答题记录查询
 * @apiName QuestionAnserHistoryQuery
 * @apiGroup Lesson
