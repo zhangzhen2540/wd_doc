@@ -4898,6 +4898,20 @@
             "optional": false,
             "field": "entity.list.deleteStatus",
             "description": "<p>删除状态，1：未删除</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.createTime",
+            "description": "<p>课时创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.updateTime",
+            "description": "<p>课时更新时间</p>"
           }
         ]
       },
