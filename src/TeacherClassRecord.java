@@ -53,6 +53,7 @@
 * @apiSuccess {Number} entity.createUserId 创建用户ID
 * @apiSuccess {String} entity.createUserName 创建用户名称
 * @apiSuccess {Number} entity.createTime 创建时间
+* @apiSuccess {Number} entity.updateTime 最近更新时间
 *
 *
 {
@@ -111,6 +112,7 @@
 * @apiSuccess {Number} entity.list.createUserId 创建用户ID
 * @apiSuccess {String} entity.list.createUserName 创建用户名称
 * @apiSuccess {Number} entity.list.createTime 创建时间
+* @apiSuccess {Number} entity.list.updateTime 最近更新时间
 *
 *
 {

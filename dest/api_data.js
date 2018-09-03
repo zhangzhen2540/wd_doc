@@ -5604,7 +5604,14 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.createTime",
-            "description": "<p>创建时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;password&quot;: &quot;e10adc3949ba59abbe56e057f20f883e&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;password&quot;: &quot;e10adc3949ba59abbe56e057f20f883e&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
           }
         ]
       }
@@ -5817,7 +5824,14 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.list.createTime",
-            "description": "<p>创建时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 4 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.updateTime",
+            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 4 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
           }
         ]
       }
@@ -6032,7 +6046,14 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.createTime",
-            "description": "<p>创建时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534862177000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;id&quot;: 2, &quot;identity&quot;: 2, &quot;level&quot;: 1, &quot;name&quot;: &quot;teacher&quot;, &quot;password&quot;: &quot;c8837b23ff8aaa8a2dde915473ce0991&quot;, &quot;sex&quot;: 1, &quot;status&quot;: 1, &quot;teacherNo&quot;: &quot;A0001&quot;, &quot;updateTime&quot;: 1534862183000, &quot;userName&quot;: &quot;teacher&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534862177000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;id&quot;: 2, &quot;identity&quot;: 2, &quot;level&quot;: 1, &quot;name&quot;: &quot;teacher&quot;, &quot;password&quot;: &quot;c8837b23ff8aaa8a2dde915473ce0991&quot;, &quot;sex&quot;: 1, &quot;status&quot;: 1, &quot;teacherNo&quot;: &quot;A0001&quot;, &quot;updateTime&quot;: 1534862183000, &quot;userName&quot;: &quot;teacher&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
           }
         ]
       }
@@ -6231,7 +6252,14 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.list.createTime",
-            "description": "<p>创建时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;13800138E10&quot;, &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534878201000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;email&quot;: &quot;test@163.com&quot;, &quot;id&quot;: 6, &quot;identity&quot;: 2, &quot;name&quot;: &quot;测试教师&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;subject&quot;: &quot;Math&quot;, &quot;teacherNo&quot;: &quot;T0001&quot;, &quot;updateTime&quot;: 1534878269000, &quot;userName&quot;: &quot;T0001&quot; } ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 2 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.updateTime",
+            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;13800138E10&quot;, &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534878201000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;email&quot;: &quot;test@163.com&quot;, &quot;id&quot;: 6, &quot;identity&quot;: 2, &quot;name&quot;: &quot;测试教师&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;subject&quot;: &quot;Math&quot;, &quot;teacherNo&quot;: &quot;T0001&quot;, &quot;updateTime&quot;: 1534878269000, &quot;userName&quot;: &quot;T0001&quot; } ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 2 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
           }
         ]
       }
