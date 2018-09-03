@@ -4997,6 +4997,117 @@ define({ "api": [
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/teacherClassRecord/list",
+    "title": "上课记录列表",
+    "description": "<p>上课记录列表</p>",
+    "name": "teacherClassRecordList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>起始时间，格式2018-09-03 12:00:00</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>结束时间，格式2018-09-03 12:00:00</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>上课记录列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>记录ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.teacherId",
+            "description": "<p>教师ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.startTime",
+            "description": "<p>开始时间（时间戳）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.endTime",
+            "description": "<p>结束时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "lessonCode",
+            "optional": false,
+            "field": "entity.lessonCode",
+            "description": "<p>上课lessonCode</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/TeacherClassRecord.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "post",
     "url": "/teching/end/edit",
     "title": "教师下课",
@@ -5500,135 +5611,6 @@ define({ "api": [
             "optional": false,
             "field": "endTime",
             "description": "<p>反馈结束时间</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Param-Example:",
-          "content": "replyStatus=1&startTime=2018-08-01%2010:01:01&endTime=2018-09-30%2012:01:01",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "200",
-              "500"
-            ],
-            "optional": false,
-            "field": "code",
-            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "message",
-            "description": "<p>响应描述</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": true,
-            "field": "entity",
-            "description": "<p>反馈列表</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.id",
-            "description": "<p>ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.replyId",
-            "description": "<p>回复意见ID（非回复为-1）</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.replyStatus",
-            "description": "<p>是否有回复，1：是</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.userId",
-            "description": "<p>反馈用户ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.userName",
-            "description": "<p>反馈用户名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.content",
-            "description": "<p>反馈内容</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Succcess-Example:",
-          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"content\": \"Whice color is you like\",\n            \"createTime\": 1535553155000,\n            \"createUserId\": 2,\n            \"deleteStatus\": 1,\n            \"id\": 6,\n            \"replyId\": -1,\n            \"replyStatus\": 1,\n            \"rootId\": 6,\n            \"updateTime\": 1535553664000,\n            \"updateUserId\": 2,\n            \"userId\": 2,\n            \"userName\": \"teacher\"\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/Feedback.java",
-    "groupTitle": "User"
-  },
-  {
-    "type": "post",
-    "url": "/feedback/list",
-    "title": "意见反馈列表",
-    "description": "<p>意见反馈列表</p>",
-    "name": "FeedbackList",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "allowedValues": [
-              "0",
-              "1"
-            ],
-            "optional": false,
-            "field": "replyStatus",
-            "description": "<p>是否有回复，1：是</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "startTime",
-            "description": "<p>反馈起始时间</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "endTime",
-            "description": "<p>反馈结束时间</p>"
           },
           {
             "group": "Parameter",
@@ -5758,6 +5740,135 @@ define({ "api": [
         {
           "title": "Succcess-Example:",
           "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"content\": \"Whice color is you like\",\n                \"createTime\": 1535553155000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 6,\n                \"replyId\": -1,\n                \"replyStatus\": 1,\n                \"rootId\": 6,\n                \"updateTime\": 1535553664000,\n                \"updateUserId\": 2,\n                \"userId\": 2,\n                \"userName\": \"teacher\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Feedback.java",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/feedback/list",
+    "title": "意见反馈列表",
+    "description": "<p>意见反馈列表</p>",
+    "name": "FeedbackList",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>反馈起始时间</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>反馈结束时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Param-Example:",
+          "content": "replyStatus=1&startTime=2018-08-01%2010:01:01&endTime=2018-09-30%2012:01:01",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>反馈列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.replyId",
+            "description": "<p>回复意见ID（非回复为-1）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.replyStatus",
+            "description": "<p>是否有回复，1：是</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.userId",
+            "description": "<p>反馈用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.userName",
+            "description": "<p>反馈用户名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.content",
+            "description": "<p>反馈内容</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"content\": \"Whice color is you like\",\n            \"createTime\": 1535553155000,\n            \"createUserId\": 2,\n            \"deleteStatus\": 1,\n            \"id\": 6,\n            \"replyId\": -1,\n            \"replyStatus\": 1,\n            \"rootId\": 6,\n            \"updateTime\": 1535553664000,\n            \"updateUserId\": 2,\n            \"userId\": 2,\n            \"userName\": \"teacher\"\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
           "type": "json"
         }
       ]
