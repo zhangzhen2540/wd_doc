@@ -5611,10 +5611,17 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.updateTime",
-            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;password&quot;: &quot;e10adc3949ba59abbe56e057f20f883e&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>最近更新时间</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"cellPhoneNo\": \"1.3800138002E10\",\n        \"className\": \"CS01\",\n        \"createTime\": 1535989581000,\n        \"createUserId\": 2,\n        \"createUserName\": \"teacher\",\n        \"email\": \"student2@163.com\",\n        \"id\": 7,\n        \"identity\": 3,\n        \"major\": \"student.major.math\",\n        \"majorName\": \"数学\",\n        \"name\": \"student2\",\n        \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\n        \"sex\": 0,\n        \"status\": 1,\n        \"studentNo\": \"S0002\",\n        \"updateTime\": 1535989581000,\n        \"userName\": \"S0002\"\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "src/Student.java",
@@ -5831,10 +5838,17 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.list.updateTime",
-            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;1.3800138002E10&quot;, &quot;className&quot;: &quot;CS01&quot;, &quot;createTime&quot;: 1535989581000, &quot;createUserId&quot;: 2, &quot;createUserName&quot;: &quot;teacher&quot;, &quot;email&quot;: &quot;student2@163.com&quot;, &quot;id&quot;: 7, &quot;identity&quot;: 3, &quot;major&quot;: &quot;student.major.math&quot;, &quot;majorName&quot;: &quot;数学&quot;, &quot;name&quot;: &quot;student2&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;studentNo&quot;: &quot;S0002&quot;, &quot;updateTime&quot;: 1535989581000, &quot;userName&quot;: &quot;S0002&quot; }, ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 4 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>最近更新时间</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"cellPhoneNo\": \"1.3800138002E10\",\n                \"className\": \"CS01\",\n                \"createTime\": 1535989581000,\n                \"createUserId\": 2,\n                \"createUserName\": \"teacher\",\n                \"email\": \"student2@163.com\",\n                \"id\": 7,\n                \"identity\": 3,\n                \"major\": \"student.major.math\",\n                \"majorName\": \"数学\",\n                \"name\": \"student2\",\n                \"sex\": 0,\n                \"status\": 1,\n                \"studentNo\": \"S0002\",\n                \"updateTime\": 1535989581000,\n                \"userName\": \"S0002\"\n            },\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 4\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "src/Student.java",
