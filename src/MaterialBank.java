@@ -75,6 +75,7 @@ data=2
 * @apiSuccess {Number} entity.fileSize 资源文件大小，单位byte
 * @apiSuccess {String} entity.fileType 资源文件类型
 * @apiSuccess {Number} entity.createTime 资源上传时间（时间戳） 
+* @apiSuccess {Number} entity.updateTime 资源更新时间（时间戳） 
 *
 * @apiSuccessExample Succcess-Example:
 {
@@ -128,6 +129,7 @@ materialName=abc
 * @apiSuccess {Number} entity.fileSize 资源文件大小，单位byte
 * @apiSuccess {String} entity.fileType 资源文件类型
 * @apiSuccess {Number} entity.createTime 资源上传时间（时间戳） 
+* @apiSuccess {Number} entity.updateTime 资源更新时间（时间戳） 
 *
 * @apiSuccessExample Succcess-Example:
 {

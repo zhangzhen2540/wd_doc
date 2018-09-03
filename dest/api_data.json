@@ -272,6 +272,13 @@
             "optional": false,
             "field": "entity.createTime",
             "description": "<p>资源上传时间（时间戳）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>资源更新时间（时间戳）</p>"
           }
         ]
       },
@@ -415,6 +422,13 @@
             "optional": false,
             "field": "entity.createTime",
             "description": "<p>资源上传时间（时间戳）</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>资源更新时间（时间戳）</p>"
           }
         ]
       },
