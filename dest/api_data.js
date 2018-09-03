@@ -6067,10 +6067,177 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.updateTime",
-            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534862177000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;id&quot;: 2, &quot;identity&quot;: 2, &quot;level&quot;: 1, &quot;name&quot;: &quot;teacher&quot;, &quot;password&quot;: &quot;c8837b23ff8aaa8a2dde915473ce0991&quot;, &quot;sex&quot;: 1, &quot;status&quot;: 1, &quot;teacherNo&quot;: &quot;A0001&quot;, &quot;updateTime&quot;: 1534862183000, &quot;userName&quot;: &quot;teacher&quot; }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>最近更新时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"certificationAuditStatus\": 0,\n        \"createTime\": 1534862177000,\n        \"createUserId\": 1,\n        \"createUserName\": \"admin\",\n        \"id\": 2,\n        \"identity\": 2,\n        \"level\": 1,\n        \"name\": \"teacher\",\n        \"password\": \"c8837b23ff8aaa8a2dde915473ce0991\",\n        \"sex\": 1,\n        \"status\": 1,\n        \"teacherNo\": \"A0001\",\n        \"updateTime\": 1534862183000,\n        \"userName\": \"teacher\"\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Teacher.java",
+    "groupTitle": "Teacher"
+  },
+  {
+    "type": "get",
+    "url": "/teacher/get",
+    "title": "教师详情",
+    "description": "<p>教师详情</p>",
+    "name": "TeacherGet",
+    "group": "Teacher",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>教师ID</p>"
           }
         ]
       }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.id",
+            "description": "<p>教师ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.status",
+            "description": "<p>教师状态，1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.name",
+            "description": "<p>教师姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.userName",
+            "description": "<p>教师登录名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.teacherNo",
+            "description": "<p>教师编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.subject",
+            "description": "<p>分类</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.sex",
+            "description": "<p>性别，0：未知，1：男，2：女</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.identity",
+            "description": "<p>身份，1：管理员，2：教师，3：学生</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.email",
+            "description": "<p>邮箱</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.cellPhoneNo",
+            "description": "<p>联系电话</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.createUserId",
+            "description": "<p>创建用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.createUserName",
+            "description": "<p>创建用户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.createTime",
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.updateTime",
+            "description": "<p>最近更新时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"certificationAuditStatus\": 0,\n        \"createTime\": 1534862177000,\n        \"createUserId\": 1,\n        \"createUserName\": \"admin\",\n        \"id\": 2,\n        \"identity\": 2,\n        \"level\": 1,\n        \"name\": \"teacher\",\n        \"password\": \"c8837b23ff8aaa8a2dde915473ce0991\",\n        \"sex\": 1,\n        \"status\": 1,\n        \"teacherNo\": \"A0001\",\n        \"updateTime\": 1534862183000,\n        \"userName\": \"teacher\"\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "src/TeacherClassRecord.java",
@@ -6273,10 +6440,230 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "entity.list.updateTime",
-            "description": "<p>最近更新时间</p> <p>{ &quot;code&quot;: 200, &quot;entity&quot;: { &quot;list&quot;: [ { &quot;cellPhoneNo&quot;: &quot;13800138E10&quot;, &quot;certificationAuditStatus&quot;: 0, &quot;createTime&quot;: 1534878201000, &quot;createUserId&quot;: 1, &quot;createUserName&quot;: &quot;admin&quot;, &quot;email&quot;: &quot;test@163.com&quot;, &quot;id&quot;: 6, &quot;identity&quot;: 2, &quot;name&quot;: &quot;测试教师&quot;, &quot;sex&quot;: 0, &quot;status&quot;: 1, &quot;subject&quot;: &quot;Math&quot;, &quot;teacherNo&quot;: &quot;T0001&quot;, &quot;updateTime&quot;: 1534878269000, &quot;userName&quot;: &quot;T0001&quot; } ], &quot;pageIndex&quot;: 0, &quot;pageSize&quot;: 0, &quot;total&quot;: 2 }, &quot;message&quot;: &quot;&quot;SUCCESS&quot;&quot; }</p>"
+            "description": "<p>最近更新时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"cellPhoneNo\": \"13800138E10\",\n                \"certificationAuditStatus\": 0,\n                \"createTime\": 1534878201000,\n                \"createUserId\": 1,\n                \"createUserName\": \"admin\",\n                \"email\": \"test@163.com\",\n                \"id\": 6,\n                \"identity\": 2,\n                \"name\": \"测试教师\",\n                \"sex\": 0,\n                \"status\": 1,\n                \"subject\": \"Math\",\n                \"teacherNo\": \"T0001\",\n                \"updateTime\": 1534878269000,\n                \"userName\": \"T0001\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 2\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Teacher.java",
+    "groupTitle": "Teacher"
+  },
+  {
+    "type": "get",
+    "url": "/teacher/pageList",
+    "title": "教师分页查询",
+    "description": "<p>教师分页查询</p>",
+    "name": "TeacherPageList",
+    "group": "Teacher",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "status",
+            "description": "<p>状态, 1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "userName",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "teacherNo",
+            "description": "<p>编码</p>"
           }
         ]
       }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>总结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>页最大数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>教师列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.id",
+            "description": "<p>教师ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.status",
+            "description": "<p>状态，1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.userName",
+            "description": "<p>登录名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.teacherNo",
+            "description": "<p>编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.sex",
+            "description": "<p>性别，0：未知，1：男，2：女</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.list.subject",
+            "description": "<p>分类</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.identity",
+            "description": "<p>身份，1：管理员，2：教师，3：学生</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.list.email",
+            "description": "<p>邮箱</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.list.cellPhoneNo",
+            "description": "<p>联系电话</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.createUserId",
+            "description": "<p>创建用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.createUserName",
+            "description": "<p>创建用户名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.createTime",
+            "description": "<p>创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.updateTime",
+            "description": "<p>最近更新时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Succcess-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"cellPhoneNo\": \"13800138E10\",\n                \"certificationAuditStatus\": 0,\n                \"createTime\": 1534878201000,\n                \"createUserId\": 1,\n                \"createUserName\": \"admin\",\n                \"email\": \"test@163.com\",\n                \"id\": 6,\n                \"identity\": 2,\n                \"name\": \"测试教师\",\n                \"sex\": 0,\n                \"status\": 1,\n                \"subject\": \"Math\",\n                \"teacherNo\": \"T0001\",\n                \"updateTime\": 1534878269000,\n                \"userName\": \"T0001\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 2\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "version": "0.0.0",
     "filename": "src/TeacherClassRecord.java",

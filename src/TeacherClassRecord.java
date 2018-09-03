@@ -56,6 +56,7 @@
 * @apiSuccess {Number} entity.updateTime 最近更新时间
 *
 *
+* @apiSuccessExample Succcess-Example:
 {
     "code": 200,
     "entity": {
@@ -115,6 +116,7 @@
 * @apiSuccess {Number} entity.list.updateTime 最近更新时间
 *
 *
+* @apiSuccessExample Succcess-Example:
 {
     "code": 200,
     "entity": {
