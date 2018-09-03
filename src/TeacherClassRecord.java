@@ -18,7 +18,9 @@
 * @apiSuccess {Number} entity.lessonId 课时ID
 * @apiSuccess {Number} entity.startTime 开始时间（时间戳）
 * @apiSuccess {Number} entity.endTime 结束时间
-* @apiSuccess {lessonCode} entity.lessonCode 上课lessonCode
+* @apiSuccess {String} entity.lessonCode 上课lessonCode
+* @apiSuccess {String} entity.teacherName 教师姓名
+* @apiSuccess {String} entity.teacherNo 教师编码
 *
 */
 

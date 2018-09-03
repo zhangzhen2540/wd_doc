@@ -5095,10 +5095,24 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "lessonCode",
+            "type": "String",
             "optional": false,
             "field": "entity.lessonCode",
             "description": "<p>上课lessonCode</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.teacherName",
+            "description": "<p>教师姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.teacherNo",
+            "description": "<p>教师编码</p>"
           }
         ]
       }
