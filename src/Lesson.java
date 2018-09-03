@@ -107,6 +107,8 @@
 * @apiSuccess {String} [entity.lessonDesc] 课时简介
 * @apiSuccess {Number=0,1} entity.status 课时状态，1：启用，0：禁用
 * @apiSuccess {Number=0,1} entity.deleteStatus 删除状态，1：未删除
+* @apiSuccess {Number} entity.createTime 课时创建时间
+* @apiSuccess {Number} entity.updateTime 课时更新时间
 *
 * @apiSuccessExample Success-Example:
 {

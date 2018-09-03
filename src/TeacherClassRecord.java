@@ -6,8 +6,8 @@
 * @apiGroup Lesson
 *
 * @apiParam {Number} lessonId 课时ID
-* @apiParam {String} startTime 起始时间，格式2018-09-03 12:00:00
-* @apiParam {String} endTime 结束时间，格式2018-09-03 12:00:00
+* @apiParam {String} [startTime] 起始时间，格式2018-09-03 12:00:00
+* @apiParam {String} [endTime] 结束时间，格式2018-09-03 12:00:00
 *
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
