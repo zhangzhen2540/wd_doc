@@ -224,6 +224,7 @@
 * @apiSuccess {Object[]} entity.list 删除课时列表
 * @apiSuccess {Number} entity.list.lessonId 课时ID
 * @apiSuccess {String} entity.list.lessonName 课时名称
+* @apiSuccess {String} [entity.list.lessonDesc] 课时描述
 * @apiSuccess {Number} entity.list.lessonStatus 课时状态，1：启用，0：禁用
 * @apiSuccess {Number} entity.list.lessonDeleteStatus 课时删除状态，1：未删除，0：已删除
 * @apiSuccess {Number} entity.list.lessonTeacherGroupId 课时教师组ID
@@ -233,6 +234,7 @@
 * @apiSuccess {String} entity.list.lessonCreateUserName 课时创建用户名
 * @apiSuccess {Number} entity.list.courseId 课程ID
 * @apiSuccess {Number} entity.list.courseName 课程名称
+* @apiSuccess {Number} [entity.list.courseTitle] 课程Title
 * @apiSuccess {Number} entity.list.courseTeacherGroupId 课程教师组ID
 * @apiSuccess {Number} entity.list.courseStatus 课程状态，1：启用，0：禁用
 * @apiSuccess {Number} entity.list.courseDeleteStatus 课程删除状态，1：未删除，0：已删除
@@ -267,6 +269,33 @@
         "pageSize": 0,
         "total": 1
     },
+    "message": "\"SUCCESS\""
+}
+*/
+
+
+
+
+
+/**
+* @api {post} /lesson/recovery/edit 回复删除的课时
+* @apiDescription 回复删除的课时
+* @apiName lessonRecoveryEdit
+* @apiGroup Lesson
+*
+* @apiParam {Number[]} lessonId 课时ID数组
+*
+* @apiParamExample {String} Request-Example: 
+*  [1, 2, 3]
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {String} [entity] 课时ID
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": "[1, 2, 3]",
     "message": "\"SUCCESS\""
 }
 */

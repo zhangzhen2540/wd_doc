@@ -4383,6 +4383,13 @@
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.list.lessonDesc",
+            "description": "<p>课时描述</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "entity.list.lessonStatus",
@@ -4443,6 +4450,13 @@
             "optional": false,
             "field": "entity.list.courseName",
             "description": "<p>课程名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": true,
+            "field": "entity.list.courseTitle",
+            "description": "<p>课程Title</p>"
           },
           {
             "group": "Success 200",
@@ -5170,6 +5184,75 @@
         {
           "title": "Success-Example:",
           "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"courseId\": 1,\n                \"createTime\": 1534936024000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 5,\n                \"lessonName\": \"lesson a name\",\n                \"status\": 1,\n                \"teacherGroupId\": 1,\n                \"updateTime\": 1534936024000,\n                \"updateUserId\": 2\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "post",
+    "url": "/lesson/recovery/edit",
+    "title": "回复删除的课时",
+    "description": "<p>回复删除的课时</p>",
+    "name": "lessonRecoveryEdit",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number[]",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID数组</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: ",
+          "content": "[1, 2, 3]",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": \"[1, 2, 3]\",\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
           "type": "json"
         }
       ]
