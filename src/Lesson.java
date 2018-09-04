@@ -192,3 +192,81 @@
     "message": "\"SUCCESS\""
 }
 */
+
+
+
+
+
+
+
+
+/**
+* @api {get} /deletedLesson/pageList 已删除课时查询
+* @apiDescription 删除课时查询
+* @apiName deletedLessonPageList
+* @apiGroup Lesson
+*
+* @apiParam {String} [lessonName] 课时名称（模糊匹配）
+* @apiParam {String} [courseName] 课程名称（模糊匹配）
+* @apiParam {Number} [createUserName] 课时创建用户名称（模糊匹配）
+* @apiParam {Number} pageSize 页最大数量
+* @apiParam {Number} pageIndex 页码
+*
+* @apiParamExample {String} Request-Example: 
+*  createUserName=teacher&pageIndex=1&lessonName=lesson&courseName=AW
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object} [entity] 课程信息
+* @apiSuccess {Number} entity.total 结果总数
+* @apiSuccess {Number} entity.pageSize 页最大数量
+* @apiSuccess {Number} entity.pageIndex 页码
+* @apiSuccess {Object[]} entity.list 删除课时列表
+* @apiSuccess {Number} entity.list.lessonId 课时ID
+* @apiSuccess {String} entity.list.lessonName 课时名称
+* @apiSuccess {Number} entity.list.lessonStatus 课时状态，1：启用，0：禁用
+* @apiSuccess {Number} entity.list.lessonDeleteStatus 课时删除状态，1：未删除，0：已删除
+* @apiSuccess {Number} entity.list.lessonTeacherGroupId 课时教师组ID
+* @apiSuccess {Number} entity.list.lessonCreateTime 课时创建时间
+* @apiSuccess {Number} entity.list.lessonUpdateTime 课时更新时间
+* @apiSuccess {Number} entity.list.lessonCreateUserId 课时创建用户ID
+* @apiSuccess {String} entity.list.lessonCreateUserName 课时创建用户名
+* @apiSuccess {Number} entity.list.courseId 课程ID
+* @apiSuccess {Number} entity.list.courseName 课程名称
+* @apiSuccess {Number} entity.list.courseTeacherGroupId 课程教师组ID
+* @apiSuccess {Number} entity.list.courseStatus 课程状态，1：启用，0：禁用
+* @apiSuccess {Number} entity.list.courseDeleteStatus 课程删除状态，1：未删除，0：已删除
+* @apiSuccess {Number} entity.list.courseCreateTime 课程创建时间
+* @apiSuccess {Number} entity.list.courseUpdateTime 课程更新时间
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": {
+        "list": [
+            {
+                "courseCreateTime": 1534871890000,
+                "courseDeleteStatus": 1,
+                "courseId": 1,
+                "courseName": "AWERQE",
+                "courseStatus": 1,
+                "courseTeacherGroupId": 1,
+                "courseUpdateTime": 1534871890000,
+                "lessonCreateTime": 1534936024000,
+                "lessonCreateUserId": 2,
+                "lessonCreateUserName": "teacher",
+                "lessonDeleteStatus": 0,
+                "lessonId": 5,
+                "lessonName": "lesson a name",
+                "lessonStatus": 1,
+                "lessonTeacherGroupId": 1,
+                "lessonUpdateTime": 1536075964000
+            }
+        ],
+        "pageIndex": 0,
+        "pageSize": 0,
+        "total": 1
+    },
+    "message": "\"SUCCESS\""
+}
+*/

@@ -4257,6 +4257,243 @@
     "groupTitle": "Lesson"
   },
   {
+    "type": "get",
+    "url": "/deletedLesson/pageList",
+    "title": "已删除课时查询",
+    "description": "<p>删除课时查询</p>",
+    "name": "deletedLessonPageList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "lessonName",
+            "description": "<p>课时名称（模糊匹配）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "courseName",
+            "description": "<p>课程名称（模糊匹配）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "createUserName",
+            "description": "<p>课时创建用户名称（模糊匹配）</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>页最大数量</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example: ",
+          "content": "createUserName=teacher&pageIndex=1&lessonName=lesson&courseName=AW",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课程信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>结果总数</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>页最大数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>删除课时列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.lessonName",
+            "description": "<p>课时名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonStatus",
+            "description": "<p>课时状态，1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonDeleteStatus",
+            "description": "<p>课时删除状态，1：未删除，0：已删除</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonTeacherGroupId",
+            "description": "<p>课时教师组ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonCreateTime",
+            "description": "<p>课时创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonUpdateTime",
+            "description": "<p>课时更新时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonCreateUserId",
+            "description": "<p>课时创建用户ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.lessonCreateUserName",
+            "description": "<p>课时创建用户名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseId",
+            "description": "<p>课程ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseName",
+            "description": "<p>课程名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseTeacherGroupId",
+            "description": "<p>课程教师组ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseStatus",
+            "description": "<p>课程状态，1：启用，0：禁用</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseDeleteStatus",
+            "description": "<p>课程删除状态，1：未删除，0：已删除</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseCreateTime",
+            "description": "<p>课程创建时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.courseUpdateTime",
+            "description": "<p>课程更新时间</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"courseCreateTime\": 1534871890000,\n                \"courseDeleteStatus\": 1,\n                \"courseId\": 1,\n                \"courseName\": \"AWERQE\",\n                \"courseStatus\": 1,\n                \"courseTeacherGroupId\": 1,\n                \"courseUpdateTime\": 1534871890000,\n                \"lessonCreateTime\": 1534936024000,\n                \"lessonCreateUserId\": 2,\n                \"lessonCreateUserName\": \"teacher\",\n                \"lessonDeleteStatus\": 0,\n                \"lessonId\": 5,\n                \"lessonName\": \"lesson a name\",\n                \"lessonStatus\": 1,\n                \"lessonTeacherGroupId\": 1,\n                \"lessonUpdateTime\": 1536075964000\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/Lesson.java",
+    "groupTitle": "Lesson"
+  },
+  {
     "type": "post",
     "url": "/lesson/deletes",
     "title": "课时删除",
@@ -6099,166 +6336,6 @@
   },
   {
     "type": "get",
-    "url": "/teacher/get",
-    "title": "教师详情",
-    "description": "<p>教师详情</p>",
-    "name": "TeacherGet",
-    "group": "Teacher",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "data",
-            "description": "<p>教师ID</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "200",
-              "500"
-            ],
-            "optional": false,
-            "field": "code",
-            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "message",
-            "description": "<p>响应描述</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": true,
-            "field": "entity",
-            "description": "<p>结果</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.id",
-            "description": "<p>教师ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.status",
-            "description": "<p>教师状态，1：启用，0：禁用</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.name",
-            "description": "<p>教师姓名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.userName",
-            "description": "<p>教师登录名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.teacherNo",
-            "description": "<p>教师编码</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.subject",
-            "description": "<p>分类</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.sex",
-            "description": "<p>性别，0：未知，1：男，2：女</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.identity",
-            "description": "<p>身份，1：管理员，2：教师，3：学生</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.email",
-            "description": "<p>邮箱</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.cellPhoneNo",
-            "description": "<p>联系电话</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.createUserId",
-            "description": "<p>创建用户ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.createUserName",
-            "description": "<p>创建用户名称</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.createTime",
-            "description": "<p>创建时间</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.updateTime",
-            "description": "<p>最近更新时间</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Succcess-Example:",
-          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"certificationAuditStatus\": 0,\n        \"createTime\": 1534862177000,\n        \"createUserId\": 1,\n        \"createUserName\": \"admin\",\n        \"id\": 2,\n        \"identity\": 2,\n        \"level\": 1,\n        \"name\": \"teacher\",\n        \"password\": \"c8837b23ff8aaa8a2dde915473ce0991\",\n        \"sex\": 1,\n        \"status\": 1,\n        \"teacherNo\": \"A0001\",\n        \"updateTime\": 1534862183000,\n        \"userName\": \"teacher\"\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/TeacherClassRecord.java",
-    "groupTitle": "Teacher"
-  },
-  {
-    "type": "get",
     "url": "/teacher/pageList",
     "title": "教师分页查询",
     "description": "<p>教师分页查询</p>",
@@ -6468,219 +6545,6 @@
     },
     "version": "0.0.0",
     "filename": "src/Teacher.java",
-    "groupTitle": "Teacher"
-  },
-  {
-    "type": "get",
-    "url": "/teacher/pageList",
-    "title": "教师分页查询",
-    "description": "<p>教师分页查询</p>",
-    "name": "TeacherPageList",
-    "group": "Teacher",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "allowedValues": [
-              "0",
-              "1"
-            ],
-            "optional": true,
-            "field": "status",
-            "description": "<p>状态, 1：启用，0：禁用</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "userName",
-            "description": "<p>用户名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "teacherNo",
-            "description": "<p>编码</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "200",
-              "500"
-            ],
-            "optional": false,
-            "field": "code",
-            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "message",
-            "description": "<p>响应描述</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": true,
-            "field": "entity",
-            "description": "<p>结果</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.total",
-            "description": "<p>总结果</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.pageSize",
-            "description": "<p>页最大数量</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.pageIndex",
-            "description": "<p>页码</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "entity.list",
-            "description": "<p>教师列表</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.id",
-            "description": "<p>教师ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.status",
-            "description": "<p>状态，1：启用，0：禁用</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.list.name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.list.userName",
-            "description": "<p>登录名</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.list.teacherNo",
-            "description": "<p>编码</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.sex",
-            "description": "<p>性别，0：未知，1：男，2：女</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": true,
-            "field": "entity.list.subject",
-            "description": "<p>分类</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.identity",
-            "description": "<p>身份，1：管理员，2：教师，3：学生</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.list.email",
-            "description": "<p>邮箱</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": true,
-            "field": "entity.list.cellPhoneNo",
-            "description": "<p>联系电话</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.createUserId",
-            "description": "<p>创建用户ID</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "entity.list.createUserName",
-            "description": "<p>创建用户名称</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.createTime",
-            "description": "<p>创建时间</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "entity.list.updateTime",
-            "description": "<p>最近更新时间</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Succcess-Example:",
-          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"cellPhoneNo\": \"13800138E10\",\n                \"certificationAuditStatus\": 0,\n                \"createTime\": 1534878201000,\n                \"createUserId\": 1,\n                \"createUserName\": \"admin\",\n                \"email\": \"test@163.com\",\n                \"id\": 6,\n                \"identity\": 2,\n                \"name\": \"测试教师\",\n                \"sex\": 0,\n                \"status\": 1,\n                \"subject\": \"Math\",\n                \"teacherNo\": \"T0001\",\n                \"updateTime\": 1534878269000,\n                \"userName\": \"T0001\"\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 2\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/TeacherClassRecord.java",
     "groupTitle": "Teacher"
   },
   {
