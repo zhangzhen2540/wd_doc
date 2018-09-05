@@ -3657,7 +3657,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/lessonMaterial/list",
-    "title": "课时资料列表查询",
+    "title": "课时资料列表",
     "description": "<p>课时资料列表查询</p>",
     "name": "LessonMaterialList",
     "group": "Lesson",
@@ -3708,7 +3708,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "Object[]",
             "optional": true,
             "field": "entity",
             "description": "<p>课时资料列表</p>"
@@ -3790,6 +3790,192 @@ define({ "api": [
         {
           "title": "Success-Example:",
           "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"createTime\": 1534949063000,\n            \"createUserId\": 1,\n            \"fileSize\": 19456,\n            \"fileType\": \"excel\",\n            \"fromWhere\": 1,\n            \"id\": 1,\n            \"isShare\": 0,\n            \"lessonId\": 2,\n            \"localPath\": \"\\\\excel\\\\db73cc16-652e-46fb-a5da-2f5e0750fae3.xls\",\n            \"materialDesc\": \"test excel\",\n            \"materialName\": \"teacherData.xls\",\n            \"materialUrl\": \"/excel/db73cc16-652e-46fb-a5da-2f5e0750fae3.xls\",\n            \"sort\": 1,\n            \"status\": 1,\n            \"updateTime\": 1534949063000,\n            \"updateUserId\": 1\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/LessonMaterial.java",
+    "groupTitle": "Lesson"
+  },
+  {
+    "type": "get",
+    "url": "/lessonMaterial/pageList",
+    "title": "课时资料分页",
+    "description": "<p>课时资料分页</p>",
+    "name": "LessonMaterialPageList",
+    "group": "Lesson",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": true,
+            "field": "status",
+            "description": "<p>资料状态</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "pageSize",
+            "description": "<p>结果最大数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "200",
+              "500"
+            ],
+            "optional": false,
+            "field": "code",
+            "description": "<p>响应码，200为处理成功，其他处理失败</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "message",
+            "description": "<p>响应描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": true,
+            "field": "entity",
+            "description": "<p>课时资料列表</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Nuumber",
+            "optional": false,
+            "field": "entity.total",
+            "description": "<p>总结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageIndex",
+            "description": "<p>页码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.pageSize",
+            "description": "<p>结果最大数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "entity.list",
+            "description": "<p>结果</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.id",
+            "description": "<p>课时资料ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.materialName",
+            "description": "<p>课时资料名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "entity.list.materialDesc",
+            "description": "<p>课时资料描述</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.lessonId",
+            "description": "<p>课时ID</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.materialUrl",
+            "description": "<p>资料访问地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.list.status",
+            "description": "<p>资料状态</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "entity.list.fileType",
+            "description": "<p>资料文件类型</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "entity.list.fileSize",
+            "description": "<p>资料文件大小，单位byte</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "entity.list.isShare",
+            "description": "<p>是否共享资料</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Example:",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"createTime\": 1535730299000,\n                \"createUserId\": 2,\n                \"fileSize\": 19456,\n                \"fileType\": \"excel\",\n                \"fromWhere\": 1,\n                \"id\": 5,\n                \"isShare\": 0,\n                \"lessonId\": 2,\n                \"localPath\": \"\\\\material\\\\excel\\\\2fc1410bd2f245139eb401028ea60463_1535701499745_O7A6.xls\",\n                \"materialDesc\": \"test excel\",\n                \"materialName\": \"teacherData.xls\",\n                \"materialUrl\": \"/material/excel/2fc1410bd2f245139eb401028ea60463_1535701499745_O7A6.xls\",\n                \"sort\": 5,\n                \"status\": 1,\n                \"updateTime\": 1535730299000,\n                \"updateUserId\": 2\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 1,\n        \"total\": 5\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
           "type": "json"
         }
       ]

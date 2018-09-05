@@ -58,7 +58,7 @@
 
 
 /**
-* @api {get} /lessonMaterial/list 课时资料列表查询
+* @api {get} /lessonMaterial/list 课时资料列表
 * @apiDescription 课时资料列表查询
 * @apiName LessonMaterialList
 * @apiGroup Lesson
@@ -68,7 +68,7 @@
 *
 * @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
 * @apiSuccess {String} [message] 响应描述
-* @apiSuccess {Object} [entity] 课时资料列表
+* @apiSuccess {Object[]} [entity] 课时资料列表
 * @apiSuccess {Number} entity.id 课时资料ID
 * @apiSuccess {String} entity.materialName 课时资料名称
 * @apiSuccess {String} [entity.materialDesc] 课时资料描述
@@ -106,3 +106,66 @@
 }
 */
 
+
+
+
+
+/**
+* @api {get} /lessonMaterial/pageList 课时资料分页
+* @apiDescription 课时资料分页
+* @apiName LessonMaterialPageList
+* @apiGroup Lesson
+*
+* @apiParam {Number} lessonId 课时ID
+* @apiParam {Number=0,1} [status] 资料状态
+* @apiParam {Number} pageIndex 页码
+* @apiParam {Number} pageSize 结果最大数量
+*
+* @apiSuccess {Number=200,500} code 响应码，200为处理成功，其他处理失败
+* @apiSuccess {String} [message] 响应描述
+* @apiSuccess {Object} [entity] 课时资料列表
+* @apiSuccess {Nuumber} entity.total 总结果
+* @apiSuccess {Number} entity.pageIndex 页码
+* @apiSuccess {Number} entity.pageSize 结果最大数量
+* @apiSuccess {Object[]} entity.list 结果
+* @apiSuccess {Number} entity.list.id 课时资料ID
+* @apiSuccess {String} entity.list.materialName 课时资料名称
+* @apiSuccess {String} [entity.list.materialDesc] 课时资料描述
+* @apiSuccess {Number} entity.list.lessonId 课时ID
+* @apiSuccess {String} entity.list.materialUrl 资料访问地址
+* @apiSuccess {Number=0,1} entity.list.status 资料状态
+* @apiSuccess {String} entity.list.fileType 资料文件类型
+* @apiSuccess {Number} entity.list.fileSize 资料文件大小，单位byte
+* @apiSuccess {Number=0,1} entity.list.isShare 是否共享资料 
+*
+* @apiSuccessExample Success-Example:
+{
+    "code": 200,
+    "entity": {
+        "list": [
+            {
+                "createTime": 1535730299000,
+                "createUserId": 2,
+                "fileSize": 19456,
+                "fileType": "excel",
+                "fromWhere": 1,
+                "id": 5,
+                "isShare": 0,
+                "lessonId": 2,
+                "localPath": "\\material\\excel\\2fc1410bd2f245139eb401028ea60463_1535701499745_O7A6.xls",
+                "materialDesc": "test excel",
+                "materialName": "teacherData.xls",
+                "materialUrl": "/material/excel/2fc1410bd2f245139eb401028ea60463_1535701499745_O7A6.xls",
+                "sort": 5,
+                "status": 1,
+                "updateTime": 1535730299000,
+                "updateUserId": 2
+            }
+        ],
+        "pageIndex": 0,
+        "pageSize": 1,
+        "total": 5
+    },
+    "message": "\"SUCCESS\""
+}
+*/
