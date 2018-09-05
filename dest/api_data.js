@@ -4824,7 +4824,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Example:",
-          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"courseId\": 1,\n            \"createTime\": 1534936024000,\n            \"createUserId\": 2,\n            \"deleteStatus\": 1,\n            \"id\": 5,\n            \"lessonName\": \"lesson a name\",\n            \"status\": 1,\n            \"teacherGroupId\": 1,\n            \"updateTime\": 1534936024000,\n            \"updateUserId\": 2\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "content": "{\n    \"code\": 200,\n    \"entity\": [\n        {\n            \"courseId\": 1,\n            \"createTime\": 1534936024000,\n            \"createUserId\": 2,\n            \"deleteStatus\": 1,\n            \"id\": 5,\n            \"lessonName\": \"lesson a name\",\n            \"status\": 1,\n            \"teacherGroupId\": 1,\n            \"updateTime\": 1534936024000,\n            \"updateUserId\": 2,\n            \"teachingStatus\": 1\n        }\n    ],\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
           "type": "json"
         }
       ]
@@ -5189,13 +5189,25 @@ define({ "api": [
             "optional": false,
             "field": "entity.list.updateTime",
             "description": "<p>课时更新时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": true,
+            "field": "entity.list.teachingStatus",
+            "description": "<p>授课状态，登录用户为教师时返回（0：未授课；1：授课中；2：授课结束）</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Example:",
-          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"courseId\": 1,\n                \"createTime\": 1534936024000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 5,\n                \"lessonName\": \"lesson a name\",\n                \"status\": 1,\n                \"teacherGroupId\": 1,\n                \"updateTime\": 1534936024000,\n                \"updateUserId\": 2\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
+          "content": "{\n    \"code\": 200,\n    \"entity\": {\n        \"list\": [\n            {\n                \"courseId\": 1,\n                \"createTime\": 1534936024000,\n                \"createUserId\": 2,\n                \"deleteStatus\": 1,\n                \"id\": 5,\n                \"lessonName\": \"lesson a name\",\n                \"status\": 1,\n                \"teacherGroupId\": 1,\n                \"updateTime\": 1534936024000,\n                \"updateUserId\": 2,\n                \"teachingStatus\": 1\n            }\n        ],\n        \"pageIndex\": 0,\n        \"pageSize\": 0,\n        \"total\": 1\n    },\n    \"message\": \"\\\"SUCCESS\\\"\"\n}",
           "type": "json"
         }
       ]

@@ -125,7 +125,8 @@
             "status": 1,
             "teacherGroupId": 1,
             "updateTime": 1534936024000,
-            "updateUserId": 2
+            "updateUserId": 2,
+            "teachingStatus": 1
         }
     ],
     "message": "\"SUCCESS\""
@@ -167,6 +168,7 @@
 * @apiSuccess {Number=0,1} entity.list.deleteStatus 删除状态，1：未删除
 * @apiSuccess {Number} entity.list.createTime 课时创建时间
 * @apiSuccess {Number} entity.list.updateTime 课时更新时间
+* @apiSuccess {Number=0,1,2} [entity.list.teachingStatus] 授课状态，登录用户为教师时返回（0：未授课；1：授课中；2：授课结束）
 *
 * @apiSuccessExample Success-Example:
 {
@@ -183,7 +185,8 @@
                 "status": 1,
                 "teacherGroupId": 1,
                 "updateTime": 1534936024000,
-                "updateUserId": 2
+                "updateUserId": 2,
+                "teachingStatus": 1
             }
         ],
         "pageIndex": 0,
