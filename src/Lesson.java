@@ -109,6 +109,7 @@
 * @apiSuccess {Number=0,1} entity.deleteStatus 删除状态，1：未删除
 * @apiSuccess {Number} entity.createTime 课时创建时间
 * @apiSuccess {Number} entity.updateTime 课时更新时间
+* @apiSuccess {Number=0,1,2} [entity.teachingStatus] 授课状态，登录用户为教师时返回（0：未授课；1：授课中；2：授课结束）
 *
 * @apiSuccessExample Success-Example:
 {
@@ -278,8 +279,8 @@
 
 
 /**
-* @api {post} /lesson/recovery/edit 回复删除的课时
-* @apiDescription 回复删除的课时
+* @api {post} /lesson/recovery/edit 恢复删除的课时
+* @apiDescription 恢复删除的课时
 * @apiName lessonRecoveryEdit
 * @apiGroup Lesson
 *
